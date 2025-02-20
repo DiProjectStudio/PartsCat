@@ -1,0 +1,109 @@
+block header
+    header#header.header
+        .header-top
+            .container
+                .header-top__inner
+                    .header__logo
+                        a(href="/").header__logo-image
+                            include ../icons/icon_logo.svg
+                        span Доставка по всей России
+                    .header__phone
+                        a(href="tel:74959891123") +7 (495) 989-11-23
+                        span По всем вопросам
+                    .header__phone.header__phone--manager
+                        a(href="tel:79362942463") +7 (936) 294-24-63
+                        span Менеджер
+                    .header__mail
+                        a(href="mailto:info@parts-cat.ru") info@parts-cat.ru
+                        span E-mail
+                    .header__time
+                        span 8:00 - 18:00
+                        span Часы работы
+                    .header__socials
+                        .header__socials-item
+                            noindex
+                                a(href="javascript:void(0)" rel="nofollow")
+                                    include ../icons/icon_whatsapp.svg
+                        .header__socals-item
+                            noindex
+                                a(href="javascript:void(0)" rel="nofollow")
+                                    include ../icons/icon_telegram.svg
+                    .header__feedback
+                        button.btn.btn--brand Обратный звонок
+                    .header__adaptive
+                        a(href="javascript:void(0)").header__cart
+                            include ../icons/icon_cart.svg
+                            .header__cart-counter 10
+
+                        button.header__menu#headerMenu
+                            include ../icons/icon_burger.svg
+
+        .header-bottom
+            .container
+                .header-bottom__inner
+                    .header__catalog
+                        a(href="javascript:void(0)").btn.btn--brand
+                            include ../icons/icon_burger.svg
+                            span Каталог
+                        ul.submenu
+                            li
+                                a(href="javascript:void(0)") Фильтры
+                            li
+                                a(href="javascript:void(0)") Ремни
+                            li
+                                a(href="javascript:void(0)") Крепёж
+                            li
+                                a(href="javascript:void(0)") Двигатель
+                            li
+                                a(href="javascript:void(0)") Гидравлика
+                            li
+                                a(href="javascript:void(0)") Трансмиссия
+                            li
+                                a(href="javascript:void(0)") Электрика
+                            li
+                                a(href="javascript:void(0)") Пальцы и втулки
+                            li
+                                a(href="javascript:void(0)") Ремкомплекты
+                            li
+                                a(href="javascript:void(0)") Масла
+                    .header__search
+                        input(type="search" placeholder="Поиск запчасти по артикулу").input.input--gray
+                        a(href='javascript:void(0)').header__search-icon
+                            include ../icons/icon_search.svg
+                    .header__nav
+                        nav
+                            ul
+                                li.with-submenu
+                                    a(href="javascript:void(0)") Сервис
+                                    ul.submenu
+                                        li
+                                            a(href="javascript:void(0)") Все услуги сервиса
+                                        li
+                                            a(href="javascript:void(0)") Капитальный ремонт двигателей
+                                        li
+                                            a(href="javascript:void(0)") Компьютерная диагностика
+                                        li
+                                            a(href="javascript:void(0)") Выездной/полевой ремонт
+                                        li
+                                            a(href="javascript:void(0)") Ремонт узлов и агрегатов
+                                        li
+                                            a(href="javascript:void(0)") Ремонт гидравлики
+                                        li
+                                            a(href="javascript:void(0)") Расточно-наплавочные работы
+                                        li
+                                            a(href="javascript:void(0)") Техническое обслуживание
+                                li
+                                    a(href="javascript:void(0)") Новостной блог
+                                li
+                                    a(href="javascript:void(0)") Оплата и доставка
+                                li
+                                    a(href="javascript:void(0)") Контакты
+
+                    .header__user
+                        a(href="javascript:void(0)").header__user-account
+                            include ../icons/icon_user.svg
+
+    include ../components/_sidebar
+
+
+

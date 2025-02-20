@@ -1,0 +1,486 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.header {
+
+  &-top {
+    padding: 10px 0;
+    background: $black;
+
+    @include breakpoint(xl) {
+      padding: 20px 0;
+    }
+
+    &__inner {
+      @include flexCenterBetween;
+    }
+  }
+
+  &-bottom {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+      background: $white;
+      padding: 12px 0;
+
+      &__inner {
+        @include flexCenterBetween;
+      }
+    }
+  }
+
+  &__logo {
+    @include flexAlignCenter;
+    gap: 10px;
+
+    @include breakpoint(xl) {
+      gap: 20px;
+    }
+
+    &-image {
+      width: 60px;
+      height: 50px;
+
+      @include breakpoint(md) {
+        width: 78px;
+        height: 64px;
+      }
+
+      @include breakpoint(xl) {
+        width: 93px;
+        height: 77px;
+      }
+    }
+
+    span {
+      display: none;
+      font-size: 14px;
+      line-height: 160%; /* 22.4px */
+      width: 94px;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+
+      @include breakpoint(xl) {
+        font-size: 16px;
+        width: 123px;
+      }
+    }
+  }
+
+  &__phone {
+    display: grid;
+    gap: 4px;
+
+    a {
+      font-weight: 500;
+      text-transform: uppercase;
+
+      @include breakpoint(xl) {
+        font-size: 20px;
+      }
+    }
+
+    span {
+      color: $gray-02;
+      font-size: 14px;
+    }
+
+    &.header__phone--manager {
+      display: none;
+
+      @include breakpoint(md) {
+        display: grid;
+      }
+    }
+  }
+
+  &__mail {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: grid;
+      gap: 4px;
+    }
+
+    a {
+      font-weight: 500;
+
+      @include breakpoint(xl) {
+        font-size: 20px;
+      }
+    }
+
+    span {
+      color: $gray-02;
+      font-size: 14px;
+    }
+  }
+
+  &__time {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: grid;
+      gap: 4px;
+    }
+
+    span {
+
+      &:first-child {
+        font-weight: 500;
+
+        @include breakpoint(xl) {
+          font-size: 20px;
+        }
+      }
+
+      &:last-child {
+        color: $gray-02;
+        font-size: 14px;
+      }
+
+    }
+  }
+
+  &__socials {
+    display: none;
+
+    @include breakpoint(lg) {
+      @include flexAlignCenter;
+      gap: 10px;
+    }
+
+    &-item {
+      width: 40px;
+      height: 40px;
+      @include flexCenterCenter;
+    }
+  }
+
+  &__feedback {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 20px;
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+
+  &__adaptive {
+    @include flexAlignCenter;
+    gap: 10px;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+
+    .header__menu {
+      @include flexCenterCenter;
+      width: 48px;
+      padding: 12px;
+      background: $brand;
+      transition: $transition;
+
+      &:hover {
+        background: $hover;
+      }
+    }
+
+  }
+
+  &__catalog {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: calc(100% + 5px);
+      height: 12px;
+      top: 100%;
+    }
+
+    &:hover .submenu{
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    .submenu {
+      top: calc(100% + 12px);
+    }
+
+    .btn {
+      padding: 12px 30px;
+      gap: 15px;
+
+      @include breakpoint(xl) {
+        padding: 18px 40px;
+      }
+
+      span {
+        font-family: inherit;
+        color: $black;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: inherit;
+        letter-spacing: 0.8px;
+        text-transform: inherit;
+
+        @include breakpoint(xl) {
+          font-size: 24px;
+          letter-spacing: 0.96px;
+        }
+      }
+    }
+
+
+  }
+
+  &__search {
+    width: 330px;
+    position: relative;
+
+    @include breakpoint(xl) {
+      width: 499px;
+      height: 66px;
+    }
+
+    input {
+      padding: 13px 16px;
+      width: 100%;
+      height: 100%;
+
+      @include breakpoint(xl) {
+        padding: 22px 20px;
+      }
+
+      &:focus {
+        & + .header__search-icon svg path {
+          stroke: $black;
+        }
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+
+      @include breakpoint(xl) {
+        right: 20px;
+      }
+
+      svg path {
+        transition: $transition;
+        stroke: $gray-03;
+      }
+    }
+  }
+
+  &__nav {
+    nav {
+      ul {
+        @include flexCenterBetween;
+        gap: 20px;
+
+        & > li {
+          a {
+            color: $black;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: $transition;
+
+            &:hover {
+              color: $gray-04;
+            }
+          }
+
+          &.with-submenu {
+            position: relative;
+
+            & > a {
+              @include flexAlignCenter;
+              gap: 10px;
+              position: relative;
+
+              &:after {
+                content: "";
+                display: block;
+                background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+                width: 16px;
+                height: 16px;
+                transition: $transition;
+                cursor: pointer;
+              }
+
+              &:before {
+                content: "";
+                width: calc(100% + 5px);
+                height: 28px;
+                position: absolute;
+                top: 100%;
+
+                @include breakpoint(xl) {
+                  height: 37px;
+                }
+              }
+            }
+
+            &:hover {
+              & .submenu {
+                opacity: 1;
+                pointer-events: auto;
+                visibility: visible;
+              }
+
+              & a:after {
+                transform: rotate(180deg);
+              }
+            }
+
+            .submenu {
+              top: calc(100% + 27px);
+
+              @include breakpoint(xl) {
+                top: calc(100% + 37px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__user {
+    @include flexAlignCenter;
+    gap: 10px;
+    &-account {
+      background: $gray-01;
+      transition: $transition;
+      @include flexCenterCenter;
+      width: 48px;
+      height: 48px;
+
+      @include breakpoint(xl) {
+        width: 66px;
+        height: 66px;
+
+        svg {
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      &:hover {
+        background: $hover;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__cart {
+    background: $gray-01;
+    transition: $transition;
+    @include flexCenterCenter;
+    width: 48px;
+    height: 48px;
+    position: relative;
+
+    @include breakpoint(xl) {
+      width: 66px;
+      height: 66px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &:hover {
+      background: $hover;
+
+      .header__cart-counter {
+        background: $black;
+        color: $brand;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-counter {
+      position: absolute;
+      @include flexCenterCenter;
+      background: $brand;
+      color: $black;
+      font-weight: 700;
+      border-radius: 50%;
+      font-size: 9px;
+      width: 16px;
+      height: 16px;
+      top: 2px;
+      right: 2px;
+      transition: $transition;
+
+      @include breakpoint(xl) {
+        width: 20px;
+        height: 20px;
+        font-size: 13px;
+        top: 4px;
+        right: 4px;
+      }
+    }
+  }
+
+  .submenu {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    row-gap: 15px;
+    column-gap: 30px;
+    left: 0;
+    pointer-events: none;
+    visibility: hidden;
+    width: 566px;
+    background: $white;
+    padding: 30px;
+    opacity: 0;
+    transition: $transition;
+
+    li {
+      a {
+        width: fit-content;
+        color: $black;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: unset;
+        transition: $transition;
+
+        &:hover {
+          color: $gray-04;
+        }
+      }
+    }
+  }
+}

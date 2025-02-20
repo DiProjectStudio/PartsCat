@@ -1,0 +1,25 @@
+:root {
+  --color-black: #0E0E0E;
+  --color-brand: #FFC400;
+  --color-white: #FEFEFE;
+  --color-gray-01: #ECECEC;
+  --color-gray-02: #CBCBCB;
+  --color-gray-03: #939393;
+  --color-gray-04: #4A4A4A;
+  --color-gray-05: #202020;
+  --color-hover: #FFD752;
+  --color-error: #F50909;
+  --transition: .3s all ease-in-out;
+}
+
+$black: var(--color-black);
+$brand: var(--color-brand);
+$white: var(--color-white);
+$gray-01: var(--color-gray-01);
+$gray-02: var(--color-gray-02);
+$gray-03: var(--color-gray-03);
+$gray-04: var(--color-gray-04);
+$gray-05: var(--color-gray-05);
+$hover: var(--color-hover);
+$error: var(--color-error);
+$transition: var(--transition);

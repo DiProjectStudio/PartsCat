@@ -1,0 +1,308 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: $white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: .4s;
+    background-color: $black;
+}
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+body b {
+    font-weight: 700;
+    color: inherit;
+}
+
+body.compensate-for-scrollbar {
+    overflow: visible!important;
+    padding: 0!important;
+}
+
+main {
+    min-height: calc(max(calc(100vh - 614px), 350px));
+}
+
+#page {
+    position: relative;
+    min-width: 360px;
+    min-height: 100%;
+    max-width: 100%;
+    @include flexColumn;
+}
+
+#page::before {
+    content: '';
+}
+
+section {
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+
+/////////////////////
+/// SCROLLBAR
+/////////////////////
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+
+}
+
+* {
+    scrollbar-width: thin;
+    //scrollbar-color: $blue-dark transparent;
+}
+
+
+/////////////////////
+/// INPUTS
+/////////////////////
+
+/* Убираем стрелки в Chrome, Safari, Edge, Opera */
+.range-values input::-webkit-outer-spin-button,
+.range-values input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"], {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none !important;
+}
+
+input:focus,
+input:focus-visible,
+input:focus::after,
+input:focus-visible::after {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input {
+    outline: none;
+    border: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Убирает стандартный стиль в Firefox */
+}
+
+.input {
+    color: $black;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    padding: 22px 20px;
+
+    &::placeholder {
+        color: $gray-03;
+        font-weight: 500;
+        line-height: 140%; /* 22.4px */
+        transition: $transition;
+    }
+
+    &:focus::placeholder {
+        color: $black;
+        font-weight: 500;
+        line-height: 140%; /* 22.4px */
+    }
+
+    &.input--white {
+        background: $white;
+    }
+    &.input--gray {
+        background: $gray-01;
+    }
+}
+
+// Checkbox
+.checkbox {
+    input {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        user-select: none;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+
+        }
+
+        &.disabled {
+            cursor: default;
+        }
+    }
+
+    input:checked + label {
+        &::before {
+            content: '';
+
+        }
+
+        &.disabled::before {
+
+        }
+    }
+
+    & ~ .checkbox {
+
+    }
+}
+
+// Radiobutton
+.radio {
+    input {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        user-select: none;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+
+        }
+    }
+
+    input:checked + label {
+        &::before {
+            content: '';
+
+        }
+    }
+
+    & ~ .radio {
+        margin-top: 8px;
+    }
+}
+
+/////////////////////
+/// BUTTONS
+/////////////////////
+
+.btn {
+    @include flexCenterCenter;
+    cursor: pointer;
+    transition: $transition;
+    font-family: "Druk Cyr", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    &.btn--brand {
+        background-color: $brand;
+        color: $black;
+
+        &:hover {
+            background: $hover;
+        }
+    }
+
+    &.btn--gray {
+        background-color: $gray-01;
+        color: $black;
+
+        &:hover {
+            background: $gray-02;
+        }
+    }
+
+    &.btn--black {
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+            background: $gray-04;
+        }
+    }
+}
+
+
+/////////////////////
+/// LINKS
+/////////////////////
+a {
+    display: inline-block;
+}
+
+
+/////////////////////
+/// ICONS
+/////////////////////
+
+
+/////////////////////
+/// OTHERS
+/////////////////////
+
+video, svg, image {
+    width: 100%;
+    height: 100%;
+}
+
+section + section {
+
+}
+
+/////////////////////
+/// CARDS & CATALOG
+/////////////////////
+
+
+
+/////////////////////
+/// TYPOGRAPHY
+/////////////////////
+
+
+
+/////////////////////
+/// SWIPER SLIDER
+/////////////////////
