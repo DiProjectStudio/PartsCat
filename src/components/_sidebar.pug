@@ -2,7 +2,18 @@
     .sidebar__inner
         .sidebar__close#sidebarClose
             include ../icons/icon-x--yellow.svg
-        .sidebar__catalog
-            .sidebar__catalog-title Каталог
+        .sidebar__catalog(data-showdown)
+            .sidebar__catalog-title(data-trigger) Каталог
         .sidebar__nav
-            .sidebar__nav-title Сервис
+            .sidebar__nav-service(data-showdown)
+                .sidebar__nav-service-title(data-trigger) Сервис
+            ul.sidebar__nav-links
+        .sidebar__user
+            a(href='javascript:void(0)').btn.btn--gray Личный кабинет
+        .sidebar__contacts
+        .sidebar__socials
+        .sidebar__feedback
+        .sidebar__search
+
+
+

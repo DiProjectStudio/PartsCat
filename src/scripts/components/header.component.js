@@ -1,4 +1,6 @@
-export default class HeaderModule {
+import Overlay from '../utils/overlay.js';
+
+export default class HeaderComponent {
     constructor() {
         this.sidebar = document.getElementById("sidebar");
         this.headerMenu = document.getElementById("headerMenu");
@@ -24,6 +26,7 @@ export default class HeaderModule {
         if (this.headerMenu && this.sidebar) {
             this.headerMenu.addEventListener("click", ()=> {
                 this.sidebar.classList.add("show");
+                Overlay.showOverlay();
             });
         }
     }

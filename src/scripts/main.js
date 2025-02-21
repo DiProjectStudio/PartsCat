@@ -7,13 +7,15 @@ import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
-import App from './modules/app.js';
+import App from './components/app.js';
+import { actualYear } from './utils/actual-year.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
+    actualYear();
     new App;
 });
 

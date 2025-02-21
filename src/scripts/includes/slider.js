@@ -2,6 +2,19 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar } from 'swiper/modules';
 
 export function initializeSlider() {
+
+    const mainPageSlider = new Swiper(".section-hero__slider .swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true,
+
+    })
+
+
     // const heroMain = new Swiper('.hero-main .swiper', {
     //     modules: [Navigation, Autoplay],
     //     slidesPerView: 1,

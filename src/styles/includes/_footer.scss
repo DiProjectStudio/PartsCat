@@ -1,0 +1,266 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.footer {
+  margin-top: 80px;
+  padding-bottom: 30px;
+
+  @include breakpoint(md) {
+    margin-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 120px;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 60px;
+  }
+
+  &__inner {
+    display: grid;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 344px);
+      gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 275px fit-content(100%) 275px;
+      grid-template-rows: repeat(2, fit-content(100%));
+      justify-content: space-between;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(3, fit-content(100%));
+    }
+
+    &-nav {
+      display: grid;
+      gap: 24px;
+      grid-auto-rows: min-content;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 344px);
+        gap: 16px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(2, 216px);
+        gap: 40px;
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+      }
+
+      @include breakpoint(xl) {
+        grid-template-columns: repeat(2, 220px);
+      }
+
+      &-leftside {
+        ul {
+          display: grid;
+          .footer__link--white {
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      &-rightside {
+        ul {
+          display: grid;
+        }
+      }
+    }
+
+    &-contacts {
+      margin-top: 30px;
+      display: grid;
+      gap: 31px;
+      grid-auto-rows: min-content;
+
+      @include breakpoint(lg) {
+        column-gap: 1 / 2;
+        row-gap: 1 / 2;
+        margin-top: 0;
+      }
+
+      &-items {
+        display: grid;
+        gap: 10px;
+
+        .footer__inner-contacts-item {
+          @include flexAlignCenter;
+          gap: 20px;
+
+          a {
+            font-family: "Druk Cyr", sans-serif;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            @include flexCenterCenter;
+            transition: $transition;
+
+            @include breakpoint(xl) {
+              font-size: 40px;
+            }
+
+            &:hover {
+              color: $brand;
+            }
+          }
+        }
+      }
+
+      span {
+        color: $gray-02;
+        line-height: 160%; /* 25.6px */
+      }
+
+      &-mail {
+        display: grid;
+        gap: 4px;
+
+        a {
+          font-family: "Druk Cyr", sans-serif;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+          transition: $transition;
+
+          @include breakpoint(xl) {
+            font-size: 40px;
+          }
+
+          &:hover {
+            color: $brand;
+          }
+        }
+
+        span {
+          color: $gray-02;
+          line-height: 160%; /* 25.6px */
+        }
+      }
+    }
+
+    &-logo {
+      display: grid;
+      gap: 40px;
+      margin-top: 16px;
+      grid-auto-rows: min-content;
+
+      @include breakpoint(md) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+        align-self: flex-end;
+        margin-top: 0;
+      }
+
+      @include breakpoint(lg) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        justify-content: space-between;
+        align-self: unset;
+        align-content: space-between;
+      }
+
+      &-image {
+        width: 187px;
+        height: 157px;
+
+        @include breakpoint(xl) {
+          width: 259px;
+          height: 218px;
+        }
+      }
+
+      &-payments {
+        @include flexAlignCenter;
+        gap: 10px;
+
+        &-item {
+          flex-shrink: 0;
+
+          @include breakpoint(xl) {
+            height: 24px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: $transition;
+
+    &.footer__link--white {
+      margin-bottom: 20px;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+
+    &.footer__link--gray {
+      color: $gray-03;
+      margin-top: 15px;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    gap: 10px;
+    margin-top: 60px;
+    grid-auto-rows: min-content;
+
+    @include breakpoint(md) {
+      grid-column: 1 / 2;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      margin-top: 0;
+    }
+
+    @include breakpoint(xl) {
+      align-self: flex-end;
+    }
+  }
+
+  &__policy {
+    line-height: 160%; /* 25.6px */
+  }
+
+  &__rights {
+    line-height: 160%; /* 25.6px */
+  }
+
+  &__devs {
+    a {
+      color: $gray-03;
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+}
