@@ -1,4 +1,5 @@
 import Overlay from '../utils/overlay.js';
+import BodyOverflow from '../utils/body-overflow.js';
 
 export default class SidebarComponent {
     constructor() {
@@ -12,12 +13,25 @@ export default class SidebarComponent {
         this.sidebarSocials = this.sidebar.querySelector(".sidebar__socials");
         this.sidebarFeedback = this.sidebar.querySelector(".sidebar__feedback");
         this.sidebarSearch = this.sidebar.querySelector(".sidebar__search");
+        this.sidebar = document.getElementById("sidebar");
+        this.headerMenu = document.getElementById("headerMenu");
         this.onInit();
     }
 
     onInit() {
         this.createSidebarInnerElements();
+        this.showSidebar();
         this.closeSidebar();
+    }
+
+    showSidebar() {
+        if (this.headerMenu && this.sidebar) {
+            this.headerMenu.addEventListener("click", ()=> {
+                this.sidebar.classList.add("show");
+                Overlay.showOverlay();
+                BodyOverflow.hidden();
+            });
+        }
     }
 
     closeSidebar() {
@@ -25,6 +39,7 @@ export default class SidebarComponent {
             this.sidebarClose.addEventListener("click", () => {
                 this.sidebar.classList.remove("show");
                 Overlay.hideOverlay();
+                BodyOverflow.visible();
             });
         }
 
@@ -32,6 +47,7 @@ export default class SidebarComponent {
         overlay.addEventListener("click", () => {
             this.sidebar.classList.remove("show");
             Overlay.hideOverlay();
+            BodyOverflow.visible();
         });
 
     }

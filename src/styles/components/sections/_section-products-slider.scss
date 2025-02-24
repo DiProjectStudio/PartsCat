@@ -1,0 +1,35 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+@use "../../base/container" as *;
+
+.products-slider {
+  &__top {
+    margin-bottom: 40px;
+    .section-title {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(lg) {
+      @include flexCenterBetween;
+      margin-bottom: 60px;
+    }
+
+    .swiper-nav {
+      display: none;
+
+      @include breakpoint(lg) {
+        @include flexAlignCenter;
+        gap: 20px;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+    margin-top: 40px;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+}

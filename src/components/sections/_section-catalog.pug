@@ -1,0 +1,24 @@
+section.section-catalog
+    .container
+        .section-catalog__inner
+            .section-title Каталог
+            .section-catalog__inner-items
+                -
+                    var catalogItems = [
+                        "Фильтры",
+                        "Ремни",
+                        "Крепёж",
+                        "Двигатель",
+                        "Гидравлика",
+                        "Трансмиссия",
+                        "Электрика",
+                        "Пальцы и втулки",
+                        "Ремкомплекты",
+                        "Масла",
+                    ]
+                each catalogItem, index in catalogItems
+                    a(href="javascript:void(0)").section-catalog__inner-item
+                        .section-catalog__inner-item-title.h3-title= catalogItem
+                        .section-catalog__inner-item-image
+                            +img(`catalog-item-image-${index + 1}.png`)
+

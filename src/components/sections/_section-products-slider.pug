@@ -1,0 +1,17 @@
+mixin sectionProductsSlider(title)
+    section.products-slider
+        .container
+            .products-slider__top
+                .section-title Популярные товары
+                .swiper-nav.swiper-nav--yellow
+                    button.button-prev
+                    button.button-next
+            .swiper
+                .swiper-wrapper
+                    - var n = 6;
+                    while n > 0
+                        .swiper-slide
+                            include ../../components/_product-card
+                        - n--;
+            .swiper-pagination
+

@@ -1,10 +1,15 @@
 @use "../../base/variables" as *;
 @use "../../base/mixins" as *;
+@use "../../base/container" as *;
 
 .section-hero {
   height: 590px;
   position: relative;
   pointer-events: none;
+
+  @include breakpoint(xl) {
+    height: 714px;
+  }
 
   &__inner {
     padding-top: 40px;
@@ -12,6 +17,7 @@
     gap: 20px;
     position: relative;
     z-index: 3;
+    grid-auto-rows: min-content;
 
 
     @include breakpoint(md) {
@@ -20,9 +26,16 @@
 
     @include breakpoint(lg) {
       padding-top: 40px;
+      padding-left: calc(118px - $container);
+    }
+
+    @include breakpoint(xl) {
+      padding-top: 80px;
+      padding-left: 0;
     }
 
     h1 {
+      margin-bottom: 0;
 
 
       @include breakpoint(md) {
@@ -30,23 +43,17 @@
       }
 
       @include breakpoint(lg) {
-        max-width: 569px;
+        @include columCountMaxWidth(6);
       }
 
-      span {
-        color: $brand;
-        font-size: inherit;
-        text-transform: inherit;
-        font-weight: inherit;
-        font-style: inherit;
-        font-family: inherit;
+      @include breakpoint(xl) {
+        @include columnCountMaxXlWidth(6);
       }
     }
 
     p {
       font-weight: 500;
       line-height: 160%; /* 32px */
-      margin-top: 20px;
 
       @include breakpoint(md) {
         font-size: 20px;
@@ -55,6 +62,12 @@
 
       @include breakpoint(lg) {
         max-width: 569px;
+        @include columCountMaxWidth(6);
+      }
+
+      @include breakpoint(xl) {
+        font-size: 24px;
+        @include columnCountMaxXlWidth(6);
       }
     }
 
@@ -107,8 +120,18 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 2;
-      @include flexCenterBetween;
-      width: 100%;
+      display: none;
+      left: $container;
+      right: $container;
+
+      @include breakpoint(lg) {
+        @include flexCenterBetween;
+      }
+
+      @include breakpoint(xl) {
+        left: 40px;
+        right: 40px;
+      }
     }
   }
 }

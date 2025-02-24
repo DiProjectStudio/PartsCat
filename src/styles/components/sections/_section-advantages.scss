@@ -1,0 +1,57 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.section-advantages {
+  &__inner {
+    &-items {
+      display: grid;
+      gap: 30px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 60px;
+      }
+
+      .section-advantages__inner-item {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 40px 1fr;
+        padding-right: 20px;
+
+        @include breakpoint(md) {
+          padding-right: 0;
+          grid-template-columns: 60px 1fr;
+        }
+
+        &-icon {
+          height: 40px;
+          align-self: flex-start;
+
+          @include breakpoint(md) {
+            height: 60px;
+          }
+
+          image {
+            width: unset;
+            height: unset;
+          }
+        }
+
+        &-text {
+          display: grid;
+          gap: 12px;
+          grid-auto-rows: fit-content(100%);
+
+          @include breakpoint(md) {
+            gap: 20px;
+          }
+
+          p {
+
+            line-height: 160%; /* 25.6px */
+          }
+        }
+      }
+    }
+  }
+}

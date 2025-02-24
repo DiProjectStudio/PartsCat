@@ -101,7 +101,7 @@ li {
 
 * {
   scrollbar-width: thin;
-  //scrollbar-color: $blue-dark transparent;
+  scrollbar-color: $black $gray-01;
 }
 
 
@@ -303,13 +303,25 @@ a {
 /// OTHERS
 /////////////////////
 
-video, svg, image {
+image, svg, video {
   width: 100%;
   height: 100%;
 }
 
 section + section {
+  margin-top: 80px;
 
+  @include breakpoint(md) {
+    margin-top: 100px;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 120px;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 160px;
+  }
 }
 
 /////////////////////
@@ -321,15 +333,32 @@ section + section {
 /// TYPOGRAPHY
 /////////////////////
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  margin-bottom: 40px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 60px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, .h3-title, .h5-title, .section-title, .h4-title {
   font-family: "Druk Cyr", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+
+  span {
+    color: $brand;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+  }
 }
 
-h1, h2 {
+h1, h2, .section-title {
   font-size: 42px;
 
   @include breakpoint(md) {
@@ -345,7 +374,7 @@ h1, h2 {
   }
 }
 
-h3 {
+h3, .h3-title {
   font-size: 24px;
 
   @include breakpoint(md) {
@@ -361,7 +390,7 @@ h3 {
   }
 }
 
-h4 {
+h4, .h4-title {
   font-size: 20px;
 
   @include breakpoint(md) {
@@ -374,6 +403,31 @@ h4 {
 
   @include breakpoint(xl) {
     font-size: 40px;
+  }
+}
+
+h5, .h5-title {
+  font-size: 24px;
+
+  @include breakpoint(lg) {
+    font-size: 30px;
+  }
+}
+
+.section-title {
+  margin-bottom: 40px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 60px;
+  }
+
+  span {
+    color: $brand;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
   }
 }
 
@@ -393,8 +447,17 @@ h4 {
       }
     }
 
+    .button-prev {
+      &:before {
+        background: url("../icons/icon_chevron-left--white.svg");
+      }
+    }
 
-
+    .button-next {
+      &:before {
+        background: url("../icons/icon_chevron-right--white.svg");
+      }
+    }
   }
 
   &.swiper-nav--yellow {
@@ -404,6 +467,18 @@ h4 {
 
       &:hover {
         background: $hover;
+      }
+    }
+
+    .button-prev {
+      &:before {
+        background: url("../icons/icon_chevron-left--black.svg");
+      }
+    }
+
+    .button-next {
+      &:before {
+        background: url("../icons/icon_chevron-right--black.svg");
       }
     }
   }
@@ -421,19 +496,8 @@ h4 {
       width: 24px;
       height: 24px;
       flex-shrink: 0;
-
     }
   }
 
-  .button-prev {
-    &:before {
-      background: url("../icons/icon_chevron-left--white.svg");
-    }
-  }
 
-  .button-next {
-    &:before {
-      background: url("../icons/icon_chevron-right--white.svg");
-    }
-  }
 }

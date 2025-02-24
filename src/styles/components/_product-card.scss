@@ -1,0 +1,154 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.product-card {
+  display: grid;
+  grid-auto-rows: min-content;
+  background: $white;
+
+  &__main {
+    display: grid;
+    gap: 8px;
+    padding: 8px;
+
+    @include breakpoint(md) {
+      gap: 12px;
+      padding: 12px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 16px;
+      padding: 20px;
+    }
+  }
+
+  &__image {
+    max-height: 165px;
+    width: 100%;
+    height: auto;
+
+    @include breakpoint(md) {
+      max-height: 224px;
+    }
+
+    @include breakpoint(lg) {
+      max-height: 275px;
+    }
+
+    @include breakpoint(xl) {
+      max-height: 328px;
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-weight: 600;
+
+    @include breakpoint(md) {
+      font-size: 18px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 20px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 24px;
+    }
+  }
+
+  &__article {
+    color: $black;
+    font-size: 14px;
+    line-height: 160%; /* 22.4px */
+
+    @include breakpoint(lg) {
+      font-size: 16px;
+    }
+  }
+
+  &__brand {
+    color: $black;
+    font-size: 14px;
+    line-height: 160%; /* 22.4px */
+
+    @include breakpoint(lg) {
+      font-size: 16px;
+    }
+  }
+
+  &__prices {
+    display: grid;
+    gap: 1px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, fit-content(100%));
+      gap: 12px;
+      align-items: center;
+    }
+
+    .new-price {
+      color: $black;
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+
+      @include breakpoint(xl) {
+        font-size: 40px;
+      }
+    }
+
+    .old-price {
+      color: $gray-03;
+      font-size: 14px;
+      line-height: 160%; /* 22.4px */
+      text-decoration: line-through;
+
+      @include breakpoint(lg) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__button {
+    .btn {
+      padding: 12px;
+      width: 100%;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+
+      @include breakpoint(md) {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+      }
+
+      @include breakpoint(xl) {
+        font-size: 32px;
+        letter-spacing: 1.28px;
+      }
+    }
+
+    .btn--black {
+      gap: 20px;
+
+      &:before {
+        content: "";
+        display: block;
+        background: url("../icons/icon_check--white.svg") no-repeat center center;
+        width: 24px;
+        height: 20px;
+        flex-shrink: 0;
+
+        @include breakpoint(md) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

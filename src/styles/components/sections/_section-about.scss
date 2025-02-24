@@ -1,0 +1,121 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.section-about {
+  &__inner {
+    &-content {
+      display: grid;
+      gap: 30px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      @include breakpoint(lg) {
+        gap: 69px;
+      }
+
+      &-text {
+        display: grid;
+        gap: 30px;
+
+        @include breakpoint(md) {
+          gap: 40px;
+        }
+
+        @include breakpoint(lg) {
+          gap: 60px;
+        }
+
+        p {
+          line-height: 160%;
+
+          @include breakpoint(lg) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &-details {
+
+        display: grid;
+        grid-auto-rows: fit-content(100%);
+
+        @include breakpoint(md) {
+          align-content: space-between;
+        }
+
+        @include breakpoint(lg) {
+          align-content: unset;
+          gap: 88px;
+        }
+
+
+        .details__title {
+          font-family: "Druk Cyr", sans-serif;
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+          margin-bottom: 40px;
+
+          @include breakpoint(lg) {
+            font-size: 42px;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 52px;
+          }
+        }
+
+        .details__addresses {
+
+          .h5-title, h5 {
+            margin-bottom: 20px;
+
+            @include breakpoint(md) {
+              margin-bottom: 30px;
+            }
+
+          }
+
+          &-block {
+            &:last-child {
+              margin-top: 20px;
+            }
+
+            &-title {
+              @include flexAlignCenter;
+              gap: 10px;
+              line-height: 160%;
+              font-weight: 600;
+              margin-bottom: 10px;
+
+              @include breakpoint(lg) {
+                font-size: 20px;
+              }
+
+              &:before {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url("../icons/icon_location.svg") no-repeat center center;
+              }
+            }
+
+            p {
+              line-height: 160%;
+
+              @include breakpoint(lg) {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.section-faq {
+
+  &__inner {
+    max-width: 1162px;
+    margin: 0 auto;
+    .section-title {
+      text-align: center;
+    }
+    .faq-item {
+      padding: 12px 0;
+      border-top: 1px solid $white;
+
+
+      @include breakpoint(md) {
+        padding: 20px 0;
+      }
+
+      &.showdown {
+        .faq-item__title:after {
+          transform: rotate(45deg);
+        }
+
+        .faq-item__content {
+          margin-top: 20px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $white;
+      }
+      &__title {
+        @include flexCenterBetween;
+        cursor: pointer;
+
+        &:hover:after {
+          background: url("../icons/icon_plus--black.svg") no-repeat center center, $brand;
+
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          width: 28px;
+          height: 28px;
+          background: url("../icons/icon_plus--white.svg") no-repeat center center;
+          transition: $transition;
+          border-radius: 50%;
+        }
+      }
+
+      &__content {
+        line-height: 160%; /* 25.6px */
+
+        @include breakpoint(md) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

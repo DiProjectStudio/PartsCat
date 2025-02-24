@@ -1,0 +1,9 @@
+mixin newsCard(title, text, index)
+    .news-card
+        .news-card__image
+            +img(`news-card-image-${index + 1}.jpg`)
+        .news-card__title= title
+        .news-card__text
+            p= text
+        .news-card__date 08.05.2023
+

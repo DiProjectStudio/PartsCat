@@ -1,0 +1,59 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+@use "../../styles/base/container" as *;
+
+.popup-in-cart {
+  position: fixed;
+  top: 74px;
+  right: $container;
+  z-index: 100;
+  width: calc(100% - 2 * $container);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100vw);
+  transition: $transition;
+  max-width: 367px;
+
+  @include breakpoint(xl) {
+    right: calc((100vw - $container-max-width) / 2);
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-auto-rows: fit-content(100%);
+    background: $white;
+    box-shadow: 0 4px 7px 0 rgba(20, 21, 31, 0.08);
+    column-gap: 8px;
+    row-gap: 4px;
+    padding: 8px;
+  }
+
+  &__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%; /* 22.4px */
+    align-self: flex-end;
+    height: fit-content;
+
+  }
+
+  &__product {
+    color: $black;
+    font-size: 14px;
+    line-height: 160%; /* 22.4px */
+    @include textLimit(1);
+  }
+}

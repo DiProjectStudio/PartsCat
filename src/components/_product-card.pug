@@ -1,0 +1,16 @@
+.product-card
+    a(href="javascript:void(0)").product-card__image
+        +img('product-card-image.png')
+    .product-card__main
+        a(href="javascript:void(0)").product-card__title Фильтр воздушный SEM 518-4406
+        .product-card__article Артикул: 518-4406
+        .product-card__brand Бренд: CAT
+        .product-card__prices
+            .new-price 1 000 000 ₽
+            .old-price 2 000 000 ₽
+        .product-card__button
+            - var buttonType = Math.floor(Math.random() * 2);
+            if buttonType === 1
+                button.btn.btn--brand В корзину
+            else
+                button.btn.btn--black В корзине

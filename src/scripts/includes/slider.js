@@ -7,11 +7,38 @@ export function initializeSlider() {
         modules: [Navigation, Pagination],
         slidesPerView: 1,
         pagination: {
-            el: '.swiper-pagination',
+            el: ".section-hero__slider .swiper-pagination",
             clickable: true,
         },
         loop: true,
+        navigation: {
+            prevEl: ".section-hero__slider .button-prev",
+            nextEl: ".section-hero__slider .button-next",
+        }
+    });
 
+    const productsSlider = new Swiper(".products-slider .swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+            el: ".products-slider .swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            prevEl: ".products-slider .button-prev",
+            nextEl: ".products-slider .button-next",
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                spaceBetween: 16
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            }
+        }
     })
 
 
