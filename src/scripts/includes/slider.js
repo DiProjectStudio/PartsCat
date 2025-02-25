@@ -39,7 +39,35 @@ export function initializeSlider() {
                 spaceBetween: 20
             }
         }
-    })
+    });
+
+    const newsSlider = new Swiper(".section-news .swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".section-news .swiper-pagination",
+            clickable: true,
+        },
+        allowTouchMove: true,
+        breakpoints: {
+            744: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                allowTouchMove: true,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                allowTouchMove: false,
+            },
+            1400: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+                allowTouchMove: false,
+            }
+        }
+    });
 
 
     // const heroMain = new Swiper('.hero-main .swiper', {

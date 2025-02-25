@@ -7,8 +7,8 @@ import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
-import App from './components/app.js';
-import { actualYear } from './utils/actual-year.js';
+import App from './app.js';
+import { actualYear } from './features/actual-year.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
@@ -30,7 +30,7 @@ if (browser) {
 Inputmask({
     mask: '+7 (999) 999-99-99',
     showMaskOnHover: false,
-    showMaskOnFocus: false,
+    showMaskOnFocus: true,
 
     onBeforePaste: (pastedValue, opts) => {
         return pastedValue.replace(/^8/, '');

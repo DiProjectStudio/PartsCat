@@ -1,0 +1,87 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.section-feedback {
+  &__inner {
+    &-title {
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        font-size: 42px;
+      }
+
+      @include breakpoint(xl) {
+        font-size: 52px;
+      }
+    }
+
+    &-form {
+      margin-top: 40px;
+
+      form {
+        display: grid;
+        gap: 10px;
+        grid-auto-rows: 66px;
+
+        @include breakpoint(md) {
+          grid-auto-rows: unset;
+          grid-template-columns: repeat(2, 1fr) min-content;
+
+        }
+
+        @include breakpoint(lg) {
+          gap: 20px;
+          grid-template-rows: 77px;
+        }
+
+        @include breakpoint(xl) {
+          grid-template-rows: 87px;
+        }
+
+        input {
+          width: 100%;
+        }
+
+        .btn {
+          font-size: 24px;
+          letter-spacing: 0.96px;
+
+          @include breakpoint(md) {
+            width: 226px;
+          }
+
+          @include breakpoint(lg) {
+            width: 281px;
+            font-size: 32px;
+            letter-spacing: 1.28px;
+          }
+
+          @include breakpoint(xl) {
+            width: 326px;
+            font-size: 40px;
+            letter-spacing: 1.6px;
+          }
+        }
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 160%; /* 22.4px */
+
+        @include breakpoint(md) {
+          font-size: 16px;
+        }
+
+        a {
+          display: inline;
+          font-size: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

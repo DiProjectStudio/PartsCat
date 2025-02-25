@@ -54,9 +54,9 @@
     p {
       font-weight: 500;
       line-height: 160%; /* 32px */
+      font-size: 20px;
 
       @include breakpoint(md) {
-        font-size: 20px;
         max-width: 554px;
       }
 

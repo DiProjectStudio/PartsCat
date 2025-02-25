@@ -2,6 +2,8 @@ section.section-news
     .container
         .section-news__inner
             .section-title НОВОСТНОЙ БЛОГ
+            .section-news__button
+                a(href="javascript:void(0)").btn.btn--brand Все новости
             .section-news__slider
                 .swiper
                     .swiper-wrapper
@@ -18,9 +20,13 @@ section.section-news
                                 {
                                     title: "Почему нужно использовать оригинальные фильтры",
                                     text: "Часто клиенты хотят сэкономить несколько тысяч рублей на фильтрах для ТО и покупают неоригинальные компоненты, что в дальнейшем может негативно сказываться на узлах и агрегатах и привести к дорогостоящим ремонтам."
-                                },
+                                }
                             ]
                         include ../../components/_news-card
-                        each item, index in newsItems
-                            .swiper-slide
-                                +newsCard(item.title, item.text, index)
+                        - var n = 2;
+                        while n > 0
+                            each item, index in newsItems
+                                .swiper-slide
+                                    +newsCard(item.title, item.text, index)
+                            - n--;
+                    .swiper-pagination
