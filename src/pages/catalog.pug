@@ -7,3 +7,48 @@ block title
 block main
     include ../components/_breadcrumbs
     +breadcrumbs('Каталог', 'Фильтры')
+    section.catalog
+        .container
+            .catalog__inner
+                h1 Фильтры
+                .catalog__inner-buttons
+                    button.filter-button.btn.btn--brand Фильтр
+                    include ../components/_sorting
+                .catalog__inner-main
+                    include ../components/_filter
+                    .catalog__inner-main-products
+                        .catalog__inner-main-products-wrapper
+                            - var n = 12;
+                            while n > 0
+                                include ../components/_product-card
+                                - n--;
+                        include ../components/_pagination
+
+    include ../components/sections/_section-seo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

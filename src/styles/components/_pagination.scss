@@ -1,0 +1,33 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.pagination {
+  @include flexCenterCenter;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+
+  @include breakpoint(md) {
+    gap: 30px;
+  }
+
+  &-item {
+    font-weight: 600;
+    line-height: 160%; /* 25.6px */
+    transition: $transition;
+    @include flexCenterCenter;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: $brand;
+    }
+
+    &.active {
+      color: $brand;
+    }
+  }
+
+}

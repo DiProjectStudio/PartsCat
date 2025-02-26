@@ -1,0 +1,208 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/container" as *;
+
+.product {
+  &__inner {
+
+  }
+
+  &__item {
+    display: grid;
+    gap: 30px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    &-image {
+      height: calc((100vw - $container * 2) * 0.98);
+      width: 100%;
+
+      @include breakpoint(lg) {
+        height: auto;
+        max-height: 557px;
+        width: 100%;
+      }
+
+      @include breakpoint(xl) {
+        height: 555px;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &-main {
+      &-description {
+        line-height: 160%; /* 25.6px */
+        margin-bottom: 30px;
+
+        @include breakpoint(md) {
+          margin-bottom: 36px;
+        }
+
+        @include breakpoint(lg) {
+          font-size: 20px;
+          margin-bottom: 37px;
+        }
+
+        @include breakpoint(xl) {
+          margin-bottom: 40px;
+        }
+      }
+
+      &-availability {
+        display: grid;
+        gap: 10px;
+        grid-auto-rows: fit-content(100%);
+
+        &-title {
+          line-height: 160%;
+        }
+
+        &-option {
+          font-weight: 600;
+          line-height: 160%;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+
+          &:before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+          }
+
+          &[data-in-stock] {
+            color: #35BC23;
+
+            &:before {
+              background: url("../icons/icon_check--green.svg") no-repeat center center;
+            }
+          }
+
+          &[data-out-of-stock] {
+            color: #BC2323;
+
+            &:before {
+              background: url("../icons/icon_x--red.svg") no-repeat center center;
+            }
+          }
+        }
+      }
+
+      &-article, .product__item-main-brand {
+        @include flexAlignCenter;
+        gap: 10px;
+        margin-top: 20px;
+
+        span {
+
+          &:last-child {
+            font-weight: 600;
+          }
+        }
+      }
+
+      &-prices {
+        @include flexAlignCenter;
+        gap: 30px;
+        margin-top: 30px;
+
+        @include breakpoint(md) {
+          margin-top: 36px;
+        }
+
+        @include breakpoint(lg) {
+          margin-top: 37px;
+        }
+
+        @include breakpoint(xl) {
+          margin-top: 40px;
+        }
+
+        .new-price {
+          font-family: "Druk Cyr", sans-serif;
+          font-size: 36px;
+          font-weight: 700;
+          text-transform: uppercase;
+
+          @include breakpoint(lg) {
+            font-size: 42px;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 52px;
+          }
+        }
+
+        .old-price {
+          color: $gray-02;
+          font-size: 18px;
+          font-weight: 600;
+          text-decoration: line-through;
+
+          @include breakpoint(lg) {
+            font-size: 20px;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 30px;
+
+        @include breakpoint(md) {
+          grid-template-columns: repeat(2, fit-content(100%));
+          margin-top: 36px;
+        }
+
+        @include breakpoint(lg) {
+          margin-top: 37px;
+        }
+
+        .btn {
+          font-size: 32px;
+          letter-spacing: 1.28px;
+          padding: 18px;
+          user-select: none;
+
+          @include breakpoint(md) {
+            padding: 18px 50px;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 40px;
+            letter-spacing: 1.6px;
+            padding: 18px 55px;
+          }
+
+          &.btn--gray {
+            gap: 20px;
+            &:before {
+              content: "";
+              width: 32px;
+              height: 32px;
+              background: url("../icons/icon_check--black.svg") no-repeat center center;
+            }
+          }
+        }
+
+        .counter {
+          @include breakpoint(md) {
+            width: 227px;
+          }
+        }
+      }
+    }
+  }
+}

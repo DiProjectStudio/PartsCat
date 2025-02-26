@@ -25,6 +25,7 @@
     @include flexAlignCenter;
     gap: 20px;
 
+
     &:not(:first-child) {
         &:before {
             content: "";
@@ -38,4 +39,5 @@
 
 .breadcrumbs-item span {
     user-select: none;
+    white-space: nowrap;
 }

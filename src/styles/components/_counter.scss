@@ -1,0 +1,25 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.counter {
+  &.counter--white {
+    @include flexCenterBetween;
+    padding: 24px 30px;
+    background: $white;
+  }
+
+  &__action {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  &__input {
+    width: 74px;
+    color: $black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: unset;
+  }
+}

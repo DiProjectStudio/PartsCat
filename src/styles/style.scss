@@ -18,6 +18,13 @@
 @use "components/sections/section-products-slider";
 @use "components/product-card";
 @use "components/news-card";
+@use "components/filter";
+@use "components/sorting";
+@use "components/pagination";
+@use "components/sections/section-seo";
+@use "components/counter";
 
 @use 'pages/index';
+@use 'pages/catalog';
+@use 'pages/product';
 

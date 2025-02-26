@@ -1,0 +1,10 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.section-seo {
+  p {
+    line-height: 160%;
+    margin-top: 20px;
+    color: $gray-02;
+  }
+}

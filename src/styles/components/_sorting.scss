@@ -1,0 +1,95 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/container" as *;
+
+.sorting-button {
+  position: relative;
+  width: fit-content;
+
+  &.showdown {
+    button:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  button {
+    color: $black;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%; /* 22.4px */
+    padding: 16px 7px;
+    @include flexAlignCenter;
+    gap: 4px;
+    background: $white;
+
+    @include breakpoint(md) {
+      gap: 10px;
+      font-size: 16px;
+      padding: 14px 20px;
+    }
+
+    @include breakpoint(lg) {
+      background: transparent;
+      color: $white;
+      padding: 0;
+    }
+
+    &:after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+      transition: $transition;
+
+      @include breakpoint(lg) {
+        background: url("../icons/icon_chevron-down--white.svg") no-repeat center center;
+      }
+    }
+  }
+
+  span {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+    display: none;
+
+    @include breakpoint(md) {
+      display: inline;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: calc(100% + 10px);
+    width: calc(100vw - $container * 2);
+    background: $white;
+    padding: 20px 20px 0 20px;
+    right: 0;
+    box-shadow: 0 4px 16.4px 0 rgba(0, 0, 0, 0.04);
+
+    @include breakpoint(md) {
+      width: 100%;
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+      grid-auto-rows: fit-content(100%);
+      padding-bottom: 20px;
+
+      a {
+        font-size: 16px;
+        line-height: 160%; /* 25.6px */
+        width: fit-content;
+        color: $black;
+        transition: $transition;
+
+        &:hover {
+          color: $gray-03;
+        }
+      }
+    }
+  }
+
+
+}

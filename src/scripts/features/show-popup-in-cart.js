@@ -7,9 +7,7 @@ export default function popupInCartState() {
             const inCartBtn = productCard.querySelector(".btn.btn--brand");
             if (inCartBtn) {
                 inCartBtn.addEventListener("click", (e) => {
-                    console.log("clicked");
                     e.preventDefault();
-                    // e.stopPropagation();
                     popupShow();
                     popupClose();
                 })

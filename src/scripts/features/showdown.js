@@ -1,4 +1,4 @@
-export default function showdown () {
+export function showdown () {
     const showdownComponents = document.querySelectorAll("[data-showdown]");
     if (showdownComponents) {
         showdownComponents.forEach((showdownComponent) => {
@@ -14,11 +14,13 @@ export default function showdown () {
             showdownTrigger.addEventListener("click", () => {
                 showdownComponentState(showdownComponent, showdownContent);
             })
+
+
         })
     }
 }
 
-function showdownComponentState(showdownComponent, showdownContent) {
+export function showdownComponentState(showdownComponent, showdownContent) {
     if (showdownComponent.classList.contains("showdown")) {
         Object.assign(showdownContent.style, {
             height: "0",

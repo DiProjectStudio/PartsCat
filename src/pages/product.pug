@@ -1,0 +1,43 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Каталог'
+    - var page = 'page-catalog'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Каталог', 'Фильтры', 'Фильтр воздушный SEM 518-4406')
+    section.product
+        .container
+            .product__inner
+                h1 Фильтр воздушный SEM 518-4406
+                .product__item
+                    .product__item-image
+                        +img('product-card-image.png')
+                    .product__item-main
+                        .product__item-main-description
+                            p.
+                                Lorem ipsum dolor sit amet consectetur. Urna in
+                                odio maecenas mauris. Nisl purus sed dignissim
+                                ut suspendisse arcu nisl. Facilisis purus in
+                                nullam orci ut tristique laoreet eget aliquet.
+
+                        .product__item-main-availability
+                            .product__item-main-availability-title Наличие на складах:
+                            .product__item-main-availability-option(data-in-stock) Москва: 100 шт
+                            .product__item-main-availability-option(data-out-of-stock) Санкт-Петербург: временно отсутствует
+                        .product__item-main-article
+                            span Артикул:
+                            span 518-4406
+                        .product__item-main-brand
+                            span Бренд:
+                            span CAT
+                        .product__item-main-prices
+                            .new-price 10 000 ₽
+                            .old-price 20 000 ₽
+                        .product__item-main-actions
+                            include ../components/_counter
+                            +counter("white")
+                            .product__item-main-actions-buttons
+                                a(href="javascript:void(0)").btn.btn--brand  В корзину
+                                //a(href="javascript:void(0)").btn.btn--gray  В корзине

@@ -2,7 +2,7 @@
 @use "variables" as *;
 
 
-* {
+body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -177,71 +177,65 @@ input[type="number"] {
   }
 }
 
-// Checkbox
-.checkbox {
+.custom-checkbox {
+  @include flexAlignCenter;
+  gap: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: $black;
+  line-height: 160%;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+
+  @include breakpoint(lg) {
+    height: fit-content;
+  }
+
+  span {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 1px solid $black;
+    @include flexAlignCenter;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:after {
+      content: "";
+      display: none;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      background: url("../icons/icon_check--black.svg");
+      top: calc(50% - 1px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   input {
-    display: none;
-  }
-
-  label {
-    display: flex;
-    user-select: none;
+    position: absolute;
+    opacity: 0;
     cursor: pointer;
-
-    &::before {
-      content: '';
-
-    }
-
-    &.disabled {
-      cursor: default;
-    }
+    height: 0;
+    width: 0;
   }
 
-  input:checked + label {
-    &::before {
-      content: '';
+  & input:checked ~ span {
+    border: 1px solid $black;
 
+    &:after {
+      display: block;
     }
-
-    &.disabled::before {
-
-    }
-  }
-
-  & ~ .checkbox {
-
   }
 }
 
-// Radiobutton
-.radio {
-  input {
-    display: none;
-  }
 
-  label {
-    display: flex;
-    user-select: none;
-    cursor: pointer;
-
-    &::before {
-      content: '';
-
-    }
-  }
-
-  input:checked + label {
-    &::before {
-      content: '';
-
-    }
-  }
-
-  & ~ .radio {
-    margin-top: 8px;
-  }
-}
 
 /////////////////////
 /// BUTTONS

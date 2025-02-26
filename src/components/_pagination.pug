@@ -1,10 +1,12 @@
 .pagination
-    a(href="prev" title="Предыдущая страница").pagination-item.pagination-arrow.disabled
-        +svg('Chevron-left')
+    a(href="prev" title="Предыдущая страница").pagination-item.pagination-arrow
+        include ../icons/icon_chevron-left--yellow.svg
     a(href="1" title="Страница 1").pagination-item.active 1
     a(href="2" title="Страница 2").pagination-item 2
     a(href="...").pagination-item.pagination-dots ...
-    a(href="7" title="Страница 10").pagination-item 20
+    a(href="3" title="Страница 3").pagination-item 3
+    a(href="3" title="Страница 4").pagination-item 4
+    a(href="3" title="Страница 5").pagination-item 5
+    a(href="3" title="Страница 6").pagination-item 6
     a(href="next" title="Следующая страница").pagination-item.pagination-arrow
-        
-        +svg('Chevron-right')
+        include ../icons/icon_chevron-right--yellow.svg
