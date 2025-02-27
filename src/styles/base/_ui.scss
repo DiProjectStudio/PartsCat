@@ -2,6 +2,22 @@
 @use "variables" as *;
 
 
+* {
+  scroll-padding: 90px;
+
+  @include  breakpoint(md) {
+    scroll-padding: 104px;
+  }
+
+  @include breakpoint(lg) {
+    scroll-padding: 177px;
+  }
+
+  @include breakpoint(xl) {
+    scroll-padding: 227px;
+  }
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -154,6 +170,7 @@ input[type="number"] {
   font-weight: 500;
   line-height: 140%; /* 22.4px */
   padding: 22px 20px;
+  border: none;
 
   &::placeholder {
     color: $gray-03;
@@ -176,6 +193,7 @@ input[type="number"] {
     background: $gray-01;
   }
 }
+
 
 .custom-checkbox {
   @include flexAlignCenter;
@@ -235,6 +253,58 @@ input[type="number"] {
   }
 }
 
+.custom-radio {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: $black;
+  line-height: 160%; /* 25.6px */
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ span:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $black;
+
+    &:after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      background: $black;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: $transition;
+    }
+
+  }
+}
 
 
 /////////////////////
@@ -315,6 +385,39 @@ section + section {
 
   @include breakpoint(xl) {
     margin-top: 160px;
+  }
+}
+
+.tabs {
+  @include flexAlignCenter;
+  margin-bottom: 40px;
+
+  .tab {
+    padding: 0 20px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid $white;
+    background: transparent;
+    color: $white;
+    transition: $transition;
+
+    &:hover {
+      color: $hover;
+      border-bottom: 1px solid $hover;
+    }
+
+    &.active {
+      color: $brand;
+      border-bottom: 1px solid $brand;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+
+  &.showed {
+    display: block;
   }
 }
 
@@ -432,6 +535,7 @@ h5, .h5-title {
 
 .swiper-nav {
   pointer-events: none;
+
   &.swiper-nav--gray {
     .button-prev, .button-next {
       background: #FEFEFE4D;

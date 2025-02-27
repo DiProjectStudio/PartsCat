@@ -13,6 +13,7 @@ export default class FooterComponent {
     onInit() {
         this.filterButtonClickHandler();
         this.closeButtonClickHandler();
+        this.closeFilterOnOverlayClick();
     }
 
     filterButtonClickHandler() {
@@ -25,6 +26,11 @@ export default class FooterComponent {
         if (this.closeButton) {
             this.closeButton.addEventListener("click", this.hideFilter.bind(this));
         }
+    }
+
+    closeFilterOnOverlayClick() {
+        const overlay = document.getElementById("overlay");
+        overlay.addEventListener("click", this.hideFilter.bind(this));
     }
 
     showFilter() {

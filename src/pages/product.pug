@@ -41,3 +41,57 @@ block main
                             .product__item-main-actions-buttons
                                 a(href="javascript:void(0)").btn.btn--brand  В корзину
                                 //a(href="javascript:void(0)").btn.btn--gray  В корзине
+
+    section.product__info
+        .container
+            .product__info__inner
+                .product__info-tabs.tabs(data-tabs-actions)
+                    button(data-tab='description').tab.active Описание
+                    button(data-tab='specifications').tab Характеристики
+                .tab-content.showed(data-content='description')
+                    p.
+                        Lorem ipsum dolor sit amet consectetur. Ultrices at
+                        viverra odio auctor cras. Vitae arcu duis odio cursus
+                        turpis massa vulputate ut. Urna purus diam nibh egestas
+                        tristique. Nunc elementum sit molestie turpis a tempor
+                        sollicitudin faucibus felis. Eget netus odio vel rhoncus
+                        aliquam. Interdum sed facilisis nisl aliquam turpis. Morbi
+                        feugiat fermentum aliquet porta platea integer aliquet.
+                        Aliquet lectus sit mi cursus venenatis cursus. Egestas
+                        tortor egestas nullam ac sed nulla. Turpis eget metus
+                        auctor amet ac. Pellentesque rhoncus auctor tellus quis.
+                        Amet bibendum vitae urna laoreet metus id. Facilisis amet
+                        hendrerit netus sit eu vestibulum semper aliquet. Facilisi
+                        fermentum a viverra ac. Malesuada vitae felis ultricies risus
+                        fringilla ornare at tortor blandit. Enim ultrices amet donec duis
+                        vel justo orci orci aliquet. Urna lorem phasellus arcu egestas amet
+                        tristique. Dui at iaculis amet facilisis condimentum. Id sem
+                        fermentum quam mattis tristique dapibus purus est.
+                .tab-content(data-content='specifications')
+                    p.
+                        Lorem ipsum dolor sit amet consectetur. Ultrices at
+                        viverra odio auctor cras. Vitae arcu duis odio cursus
+                        turpis massa vulputate ut. Urna purus diam nibh egestas
+                        tristique. Nunc elementum sit molestie turpis a tempor
+                        sollicitudin faucibus felis. Eget netus odio vel rhoncus
+                        aliquam. Interdum sed facilisis nisl aliquam turpis. Morbi
+                        feugiat fermentum aliquet porta platea integer aliquet.
+
+    section.product__related
+        .container
+            .product__related__inner
+                .product__related-top
+                    .section-title Похожие товары
+                    .swiper-nav.swiper-nav--yellow
+                        button.button-prev
+                        button.button-next
+                .product__related-slider
+                    .swiper
+                        .swiper-wrapper
+                            - var n = 5;
+                            while n > 0
+                                .swiper-slide
+                                    include ../components/_product-card
+                                - n--;
+                    .swiper-pagination
+

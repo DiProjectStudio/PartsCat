@@ -6,6 +6,7 @@ import FooterComponent from './components/filter.component.js';
 import SortingComponent from './components/sorting.component.js';
 import { showdown } from './features/showdown.js';
 import CounterComponent from './components/counter.component.js';
+import tabActions from './features/tabs.js';
 
 export default class App {
     constructor() {
@@ -20,5 +21,6 @@ export default class App {
         new FooterComponent();
         new SortingComponent();
         new CounterComponent();
+        tabActions();
     }
 }

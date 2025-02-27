@@ -3,7 +3,7 @@
 
 .filter {
   position: fixed;
-  z-index: 500;
+  z-index: 600;
   top: 0;
   left: 0;
   transform: translateX(-100vw);
@@ -92,6 +92,8 @@
         line-height: 160%; /* 32px */
         @include flexAlignCenter;
         gap: 10px;
+        width: fit-content;
+        cursor: pointer;
 
         &:after {
           content: "";

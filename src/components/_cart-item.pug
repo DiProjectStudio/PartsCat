@@ -1,0 +1,23 @@
+.cart-item
+    a(href="product.html").cart-item__image
+        +img('product-card-image.png')
+    .cart-item__main
+        a(href="product.html").cart-item__main-title Фильтр воздушный SEM 518-4406
+        .cart-item__main-details
+            .price
+                .price__title Цена
+                .price__values
+                    .new-price 10 000 ₽
+                    .old-price 20 000 ₽
+            .count
+                .count__title Кол-во
+                include ../components/_counter
+                +counter("gray")
+            .amount
+                .amount__title Сумма
+                .amount__values
+                    .new-price 100 000 ₽
+                    .old-price 200 000 ₽
+    .cart-item__icon
+        include ../icons/icon_trash.svg
+

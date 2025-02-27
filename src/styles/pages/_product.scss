@@ -160,6 +160,7 @@
         display: grid;
         gap: 10px;
         margin-top: 30px;
+        grid-auto-rows: 77px;
 
         @include breakpoint(md) {
           grid-template-columns: repeat(2, fit-content(100%));
@@ -168,6 +169,10 @@
 
         @include breakpoint(lg) {
           margin-top: 37px;
+        }
+
+        @include breakpoint(xl) {
+          grid-auto-rows: 87px;
         }
 
         .btn {
@@ -201,7 +206,63 @@
           @include breakpoint(md) {
             width: 227px;
           }
+
+          @include breakpoint(lg) {
+            padding: 29px 30px;
+            width: 236px;
+          }
         }
+      }
+    }
+  }
+}
+
+.product__info {
+
+  .tab-content {
+    color: #FFF;
+    line-height: 160%; /* 25.6px */
+
+    @include breakpoint(lg) {
+      font-size: 20px;
+    }
+  }
+}
+
+.product__related {
+  &__inner {
+
+  }
+
+  &-top {
+
+    @include breakpoint(lg) {
+      @include flexCenterBetween;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      @include breakpoint(lg) {
+        margin-bottom: 0;
+      }
+    }
+    .swiper-nav {
+      display: none;
+
+      @include breakpoint(lg) {
+        @include flexAlignCenter;
+        gap: 20px;
+      }
+    }
+  }
+
+  &-slider {
+    .swiper-pagination {
+      position: static;
+      margin-top: 40px;
+
+      @include breakpoint(lg) {
+        display: none;
       }
     }
   }

@@ -1,0 +1,124 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.cart {
+  &__inner {
+    &-wrapper {
+      display: grid;
+      gap: 40px;
+
+      @include breakpoint(lg) {
+        grid-template-columns: 9fr 3fr;
+        gap: 23px;
+
+      }
+    }
+  }
+}
+
+.cart__items {
+  &-top {
+    @include flexCenterBetween;
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+
+    &-count {
+
+    }
+
+    &-clear {
+      @include flexAlignCenter;
+      gap: 8px;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        aspect-ratio: 1/1;
+        background: url("../icons/icon_x--white.svg") no-repeat center center;
+
+        @include breakpoint(md) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &-main {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+.cart__details {
+  background: $white;
+  padding: 16px;
+  height: fit-content;
+
+  &-amount {
+    @include flexCenterBetween;
+    color: $black;
+    margin-bottom: 20px;
+
+    &-title {
+
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    &-value {
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &-count {
+    @include flexCenterBetween;
+    margin-bottom: 10px;
+
+    &-title {
+      color: $gray-03;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &-value {
+      color: $black;
+    }
+  }
+
+  &-discount {
+    @include flexCenterBetween;
+
+    &-title {
+      color: $gray-03;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &-value {
+      color: $black;
+    }
+  }
+
+  &-buttons {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+
+    .btn {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.96px;
+      padding: 12px;
+    }
+  }
+}

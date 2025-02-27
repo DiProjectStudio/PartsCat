@@ -3,23 +3,80 @@
 
 .counter {
   &.counter--white {
-    @include flexCenterBetween;
     padding: 24px 30px;
     background: $white;
+    @include flexCenterBetween;
+
+    .counter__action {
+      &:after {
+        content: "";
+        width: 24px;
+        height: 24px;
+      }
+
+      &.minus {
+        &:after {
+          background: url("../icons/icon_minus.svg") no-repeat center center;
+        }
+      }
+
+      &.plus {
+        &:after {
+          background: url("../icons/icon_plus--black.svg") no-repeat center center;
+        }
+      }
+    }
+
+    .counter__input {
+      font-size: 24px;
+      width: 74px;
+    }
+  }
+
+  &.counter--gray {
+    background: $gray-01;
+    padding: 12px 20px;
+    @include flexAlignCenter;
+    gap: 20px;
+
+    .counter__action {
+      &:after {
+        content: "";
+        width: 16px;
+        height: 16px;
+      }
+
+      &.minus {
+        &:after {
+          background: url("../icons/icon_minus--small.svg") no-repeat center center;
+        }
+      }
+
+      &.plus {
+        &:after {
+          background: url("../icons/icon_plus--black-small.svg") no-repeat center center;
+        }
+      }
+    }
+
+    .counter__input {
+      font-size: 16px;
+      width: 55px;
+      line-height: 100%;
+    }
   }
 
   &__action {
-    width: 24px;
-    height: 24px;
+    @include flexAlignCenter;
     cursor: pointer;
   }
 
   &__input {
-    width: 74px;
+
     color: $black;
     text-align: center;
-    font-size: 24px;
     font-weight: 600;
     cursor: unset;
+    background: transparent;
   }
 }

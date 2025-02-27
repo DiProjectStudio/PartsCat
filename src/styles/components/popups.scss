@@ -14,8 +14,17 @@
   transition: $transition;
   max-width: 367px;
 
+  @include breakpoint(md) {
+    top: calc(84px + 8px);
+  }
+
+  @include breakpoint(lg) {
+    top: calc(157px + 8px);
+  }
+
   @include breakpoint(xl) {
     right: calc((100vw - $container-max-width) / 2);
+    top: calc(207px + 8px);
   }
 
   &.show {

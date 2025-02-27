@@ -23,8 +23,12 @@
 @use "components/pagination";
 @use "components/sections/section-seo";
 @use "components/counter";
+@use "components/cart-item";
 
 @use 'pages/index';
 @use 'pages/catalog';
 @use 'pages/product';
+@use 'pages/cart';
+@use 'pages/order';
+@use 'pages/done';
 

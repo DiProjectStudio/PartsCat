@@ -1,0 +1,183 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Оформление'
+    - var page = 'page-order'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Корзина', 'Оформление')
+    section.order
+        .container
+            .order__inner
+                h1 Оформление
+                .order__wrapper
+                    .order__main
+                        .order__region.order-section#region
+                            .order-section__top
+                                .order-section__number 1
+                                .order-section__title Регион доставки
+                            .order-section__content
+                                .order__region__content-title Тип плательщика:
+                                label.custom-radio Физическое лицо
+                                    input(type="radio" checked="checked" name="individual")
+                                    span
+                                label.custom-radio Юридическое лицо
+                                    input(type="radio" name="individual")
+                                    span
+                                .order__region-inputs.order-section__inputs
+                                    input(type="text" placeholder="Местоположение*" required).input.input--gray
+                                    input(type="text" placeholder="Индекс*" required).input.input--gray
+                            a(href="#delivery").order-section__next-button.btn.btn--brand Далее
+
+                        .order__delivery.order-section#delivery
+                            .order-section__top
+                                .order-section__number 2
+                                .order-section__title Доставка
+                            .order__delivery-content.order-section__content
+                                .order__delivery-items
+                                    -
+                                        var deliveryItems = [
+                                            {
+                                                icon: "delivery-icon-location.png",
+                                                title: "Самовывоз Москва",
+                                                details: "Московская область, Долгопрудный, микрорайон Павельцево, Новое шоссе 31с1",
+                                                price: "Бесплатно"
+                                            },
+                                            {
+                                                icon: "delivery-icon-location.png",
+                                                title: "Самовывоз Санкт-Петербург",
+                                                details: "Санкт-Петербурге, г.п Павлово, переулок Горский, д.12",
+                                                price: "Бесплатно"
+                                            },
+                                            {
+                                                icon: "delivery-icon-cdek.png",
+                                                title: "СДЭК, Доставка курьером",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                            {
+                                                icon: "delivery-icon-cdek.png",
+                                                title: "СДЭК, Доставка в почтамат",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                            {
+                                                icon: "delivery-icon-cdek.png",
+                                                title: "СДЭК, Доставка в пункт выдачи",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                            {
+                                                icon: "delivery-icon-lines.png",
+                                                title: "Деловые Линии (до адреса)",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                            {
+                                                icon: "delivery-icon-lines.png",
+                                                title: "Деловые Линии (до терминала)",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                            {
+                                                icon: "delivery-icon-pek.png",
+                                                title: "Доставка ПЭК",
+                                                details: "Стоимость и сроки доставки рассчитывается индивидуально",
+                                                price: ""
+                                            },
+                                        ]
+                                    each deliveryItem in deliveryItems
+                                        .order__delivery-item
+                                            .order__delivery-item-icon
+                                                +img(`${deliveryItem.icon}`)
+                                            .order__delivery-item-title= deliveryItem.title
+                                            .order__delivery-item-details= deliveryItem.details
+                                            if deliveryItem.price
+                                                .order__delivery-item-price= deliveryItem.price
+                                .order__delivery-choice
+                                    .order__delivery-choice-icon
+                                        +img('delivery-icon-cdek.png')
+                                    .order__delivery-choice-title СДЭК, Доставка в почтамат
+                                    .order__delivery-choice-button
+                                        a(href="javascript:void(0)").btn.btn--brand Выбрать почтамат
+                                    .order__delivery-choice-price
+                                        .order__delivery-choice-price-title Стоимость
+                                        .order__delivery-choice-price-value 100 000 ₽
+                                    .order__delivery-choice-deadlines
+                                        .order__delivery-choice-deadlines-title Срок доставки
+                                        .order__delivery-choice-deadlines-value 2–3 дня
+                            .order-section__buttons
+                                a(href="#region").order-section__prev-button.btn.btn--black Назад
+                                a(href="#payment").order-section__next-button.btn.btn--brand Далее
+
+                        .order__payment.order-section#payment
+                            .order-section__top
+                                .order-section__number 3
+                                .order-section__title Оплата
+                            .order__payment-content
+                                .order__payment-item
+                                    .order__payment-item-icon
+                                        +img('payment-icon-1.png')
+                                    .order__payment-item-title Банковская картой на сайте
+                                    .order__payment-item-banks
+                                        +img('payment-banks-tbank.png')
+                                        +img('payment-banks-mir.png')
+                                        +img('payment-banks-visa.png')
+                                        +img('payment-banks-mastercard.png')
+                                        +img('payment-banks-sbp.png')
+                                .order__payment-item
+                                    .order__payment-item-icon
+                                        +img('payment-icon-2.png')
+                                    .order__payment-item-title Банковской картой при получении
+                                    .order__payment-item-banks
+                                        +img('payment-banks-tbank.png')
+                                        +img('payment-banks-mir.png')
+                                        +img('payment-banks-visa.png')
+                                        +img('payment-banks-mastercard.png')
+                                        +img('payment-banks-sbp.png')
+                                .order__payment-item
+                                    .order__payment-item-icon
+                                        +img('payment-icon-3.png')
+                                    .order__payment-item-title Наличными при получении
+                            .order-section__buttons
+                                a(href="#delivery").order-section__prev-button.btn.btn--black Назад
+                                a(href="#").order-section__next-button.btn.btn--brand Далее
+
+                        .order__buyer.order-section
+                            .order-section__top
+                                .order-section__number 4
+                                .order-section__title Покупатель
+                            .order__buyer-form
+                                .order__buyer-form-inputs
+                                    input(type="text" placeholder="ФИО*" required).input.input--gray
+                                    input(type="text" placeholder="Email*" required).input.input--gray
+                                    input(type="text" placeholder="Телефон" data-phone-number required).input.input--gray
+                                    input(type="text" placeholder="Адрес*" required).input.input--gray
+                                textarea(placeholder="Комментарий к заказу").input.input--gray
+                            a(href="#payment").order-section__prev-button.btn.btn--black Назад
+
+                    .order__total-wrapper
+                        .order__total
+                            .order__total-top
+                                .order__total-top-title Итого
+                                .order__total-top-value 100 000 ₽
+                            .order__total-delivery
+                                .order__total-delivery-title Доставка
+                                .order__total-delivery-value Курьер
+                            .order__total-payment
+                                .order__total-payment-title Оплата
+                                .order__total-payment-value Банковская карта
+                            .order__total-button
+                                a(href="done.html").btn.btn--brand Оформить заказ
+                            .order__total-agree
+                                p.
+                                    Нажимая на кнопку “Оформить заказ”, вы соглашаетесь
+                                    на обработку персональных данных и подтверждаете, что
+                                    ознакомлены с <a href="javascript:void(0)">политикой конфиденциальности</a>
+
+
+
+
+
+

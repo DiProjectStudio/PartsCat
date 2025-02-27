@@ -1,0 +1,202 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.cart-item {
+  background: $white;
+  padding: 12px;
+  position: relative;
+  display: grid;
+  gap: 20px;
+
+  @include breakpoint(md) {
+    min-height: 192px;
+    display: flex;
+    gap: 30px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 20px;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+
+    @include breakpoint(lg) {
+      width: 172px;
+      height: auto;
+    }
+  }
+
+  &__main {
+    display: grid;
+    gap: 20px;
+    grid-auto-rows: fit-content(100%);
+    width: 100%;
+
+    @include breakpoint(md) {
+      align-content: space-between;
+      gap: 46px;
+    }
+
+    &-title {
+      color: $black;
+      font-size: 18px;
+      font-weight: 600;
+      min-height: 44px;
+      max-width: 476px;
+
+      @include breakpoint(lg) {
+        font-size: 24px;
+        min-height: 57px;
+      }
+    }
+
+    &-details {
+      @include flexColumn;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .price {
+        @include flexCenterBetween;
+
+        @include breakpoint(md) {
+          flex-direction: column;
+          gap: 19px;
+          align-items: flex-start;
+          padding-right: 33px;
+        }
+
+        &__title {
+          color: $gray-03;
+          font-size: 14px;
+          font-weight: 600;
+
+          @include breakpoint(lg) {
+            font-size: 16px;
+          }
+        }
+
+        &__values {
+          @include flexAlignCenter;
+          gap: 12px;
+
+          .new-price {
+            color: $black;
+            font-family: "Druk Cyr", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include breakpoint(lg) {
+              font-size: 30px;
+            }
+          }
+
+          .old-price {
+            color: $gray-03;
+            font-size: 14px;
+            text-decoration: line-through;
+
+            @include breakpoint(lg) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .count {
+        @include flexCenterBetween;
+
+        @include breakpoint(md) {
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        &__title {
+          color: $gray-03;
+          font-size: 14px;
+          font-weight: 600;
+
+          @include breakpoint(lg) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .amount {
+        @include flexCenterBetween;
+
+        @include breakpoint(md) {
+          flex-direction: column;
+          gap: 19px;
+          align-items: flex-start;
+          padding-right: 10px;
+        }
+
+        &__title {
+          color: $gray-03;
+          font-size: 14px;
+          font-weight: 600;
+
+          @include breakpoint(lg) {
+            font-size: 16px;
+          }
+        }
+
+        &__values {
+          @include flexAlignCenter;
+          gap: 12px;
+
+          .new-price {
+            color: $black;
+            font-family: "Druk Cyr", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include breakpoint(lg) {
+              font-size: 30px;
+            }
+          }
+
+          .old-price {
+            color: $gray-03;
+            font-size: 14px;
+            text-decoration: line-through;
+
+            @include breakpoint(lg) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    svg path {
+      transition: $transition;
+    }
+
+
+    &:hover {
+      & svg path {
+
+        stroke: $hover;
+      }
+    }
+  }
+}

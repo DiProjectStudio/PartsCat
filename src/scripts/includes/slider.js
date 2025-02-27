@@ -69,6 +69,32 @@ export function initializeSlider() {
         }
     });
 
+    const productRelatedSlider = new Swiper(".product__related .swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+            el: ".product__related .swiper-pagination",
+        },
+        navigation: {
+            prevEl: ".product__related .button-prev",
+            nextEl: ".product__related .button-next",
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            1400: {
+                spaceBetween: 30
+            }
+        }
+    })
+
 
     // const heroMain = new Swiper('.hero-main .swiper', {
     //     modules: [Navigation, Autoplay],

@@ -1,0 +1,14 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Заказ оформлен'
+    - var page = 'page-done'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Заказ оформлен')
+    section.done
+        .container
+            .done__inner
+                .h3-title Спасибо! Заказ оформлен
+

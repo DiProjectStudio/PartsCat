@@ -1,0 +1,10 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.done {
+  &__inner {
+    background: $white;
+    padding: 30px 20px;
+    color: $black;
+  }
+}

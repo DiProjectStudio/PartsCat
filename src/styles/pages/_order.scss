@@ -1,0 +1,356 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.order {
+  &__inner {
+
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 40px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr 275px;
+      gap: 20px;
+    }
+  }
+
+  &__main {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+.order-section {
+  background: $white;
+  padding: 16px;
+  display: grid;
+
+  &__top {
+    @include flexAlignCenter;
+    gap: 20px;
+    color: $black;
+    margin-bottom: 20px;
+  }
+
+  &__number {
+    font-weight: 600;
+    line-height: 160%; /* 25.6px */
+    @include flexCenterCenter;
+    width: 36px;
+    height: 36px;
+    background: $brand;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__inputs {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__buttons {
+    @include flexCenterBetween;
+  }
+
+  &__next-button {
+    padding: 12px 24px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    width: fit-content;
+    justify-self: flex-end;
+    margin-top: 20px;
+  }
+
+  &__prev-button {
+    padding: 12px 24px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    width: fit-content;
+    justify-self: flex-start;
+    margin-top: 20px;
+  }
+}
+
+.order__region {
+  &-inputs {
+    margin-top: 20px;
+  }
+
+  &__content {
+    &-title {
+      color: $black;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.order__delivery {
+  &-content {
+    display: grid;
+    gap: 40px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr fit-content(100%);
+      gap: 30px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 40px;
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.order__delivery-item {
+  background: $black;
+  padding: 10px;
+  color: $white;
+  @include flexColumn;
+  gap: 10px;
+  min-height: 266px;
+  transition: $transition;
+
+  &.checked {
+    background: $brand;
+    color: $black;
+  }
+
+  &-icon {
+    height: 32px;
+    @include flexAlignCenter;
+
+    img {
+      object-fit: contain;
+      width: unset;
+      height: unset;
+    }
+  }
+
+  &-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &-details {
+    font-size: 14px;
+    line-height: 160%;
+  }
+
+  &-price {
+    margin-top: auto;
+  }
+}
+
+.order__delivery-choice {
+  background: $black;
+  padding: 20px;
+  height: fit-content;
+
+  &-icon {
+    height: 32px;
+    margin-bottom: 10px;
+
+    img {
+      width: unset;
+      height: unset;
+    }
+  }
+
+  &-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &-button {
+    .btn {
+      padding: 12px;
+      font-size: 24px;
+      letter-spacing: 0.96px;
+    }
+  }
+
+  &-price, &-deadlines {
+    display: grid;
+    gap: 4px;
+    margin-top: 20px;
+
+    &-title {
+      font-size: 14px;
+    }
+
+    &-value {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+.order__total-wrapper {
+
+}
+
+.order__total {
+  background: $white;
+  padding: 16px;
+  color: $black;
+
+
+  @include breakpoint(md) {
+    padding: 20px;
+  }
+
+  @include breakpoint(lg) {
+    position: sticky;
+    top: 177px;
+    right: 0;
+  }
+
+  @include breakpoint(xl) {
+    top: 227px;
+  }
+
+  &-top {
+    @include flexCenterBetween;
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    &-value {
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &-delivery, &-payment {
+    @include flexCenterBetween;
+    margin-top: 10px;
+
+    &-title {
+      color: $gray-03;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &-value {
+      font-size: 14px;
+      line-height: 160%; /* 22.4px */
+    }
+  }
+
+  &-button {
+    margin: 20px 0 10px;
+
+    .btn {
+      padding: 12px;
+      font-size: 24px;
+      letter-spacing: 0.96px;
+    }
+  }
+
+  &-agree {
+    font-size: 14px;
+    line-height: 160%; /* 22.4px */
+
+    a {
+      text-decoration: underline;
+      display: inline;
+    }
+  }
+}
+
+.order__payment {
+  &-content {
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-item {
+    background: $black;
+    padding: 16px;
+    display: grid;
+    gap: 20px;
+    transition: $transition;
+    grid-template-rows: repeat(2, fit-content(100%)) 1fr;
+
+    &.checked {
+      background: $brand;
+      color: $black;
+    }
+
+    &-icon {
+      img {
+        width: unset;
+        height: unset;
+      }
+    }
+
+    &-banks {
+      @include flexAlignCenter;
+      gap: 4px;
+      align-self: flex-end;
+
+      img {
+        width: unset;
+        height: unset;
+      }
+    }
+  }
+}
+
+.order__buyer {
+  &-form {
+    display: grid;
+    gap: 10px;
+
+    &-inputs {
+      display: grid;
+      gap: 10px;
+      grid-auto-rows: 66px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    textarea {
+      height: 130px;
+      resize: none;
+    }
+  }
+}
