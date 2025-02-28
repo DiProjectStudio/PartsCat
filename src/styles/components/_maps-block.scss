@@ -1,0 +1,114 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.contacts-map__items {
+  display: grid;
+  gap: 48px;
+
+  @include breakpoint(lg) {
+    gap: 30px;
+  }
+
+  .contacts-map__item {
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      grid-template-rows: repeat(3, fit-content(100%));
+      max-height: 308px;
+      column-gap: 20px;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: calc(1400px / 12 * 5) calc(1400px / 12 * 6);
+      justify-content: space-between;
+    }
+
+    &-title, & h5 {
+      @include flexAlignCenter;
+      gap: 10px;
+      margin-bottom: 20px;
+
+      @include breakpoint(lg) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+      }
+
+      &:before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: url("../icons/icon_location.svg") no-repeat center center;
+      }
+    }
+
+    p {
+      line-height: 160%;
+      margin-bottom: 20px;
+
+      @include breakpoint(lg) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        font-size: 20px;
+      }
+    }
+
+    &-map {
+
+      grid-column: 2 / 3;
+      grid-row: 1 / 4;
+      .map__wrapper {
+        height: 438px;
+        width: 100%;
+
+        @include breakpoint(md) {
+          height: 324px;
+        }
+
+        @include breakpoint(lg) {
+          height: 308px;
+        }
+
+        .my-map {
+          width: 100%!important;
+          height: 100%!important;
+          max-width: 100% !important;
+        }
+
+        .ymaps-2-1-79-map {
+          width: 100% !important;
+          height: 100%!important;
+        }
+
+        .ymaps-2-1-79-gotoymaps__text {
+          font-size: unset;
+          color: $black;
+        }
+
+        .ymaps-2-1-79-gototaxi__text {
+          font-size: unset;
+          color: $black;
+        }
+
+        .ymaps-2-1-79-islets_icon-caption {
+          color: $black;
+          font-weight: 600;
+          font-size: 13px;
+          //max-width: unset!important;
+        }
+
+        .ymaps-2-1-79-copyright__link {
+          color: $black;
+          font-size: 11px;
+        }
+
+        .ymaps-2-1-79-float-button-text,
+        .ymaps-2-1-79-float-button-text *,
+        .ymaps-2-1-79-listbox__button-text,
+        .ymaps-2-1-79-listbox__list-item-text{
+          color: $black;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

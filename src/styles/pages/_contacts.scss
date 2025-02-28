@@ -1,0 +1,91 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.contacts {
+  &__items {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 128px);
+      gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 128px;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 30px;
+    }
+
+    .contacts__item {
+      background: $white;
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+      justify-content: space-between;
+
+      &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        @include breakpoint(md) {
+          grid-column: span 2;
+        }
+
+        @include breakpoint(lg) {
+          grid-column: unset;
+        }
+      }
+
+      &:nth-child(4), &:nth-child(5) {
+
+        @include breakpoint(md) {
+          grid-column: span 3;
+          grid-row: 2 / 3;
+        }
+
+        @include breakpoint(lg) {
+          grid-column: unset;
+          grid-row: unset;
+        }
+      }
+
+      &-top {
+        @include flexAlignCenter;
+        gap: 20px;
+        align-self: flex-start;
+
+        a {
+          @include flexCenterCenter;
+        }
+
+        svg {
+          width: 36px;
+          height: auto;
+        }
+      }
+
+      a, p:nth-child(1) {
+        color: $black;
+        font-family: "Druk Cyr", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+
+        @include breakpoint(xl) {
+          font-size: 30px;
+        }
+      }
+
+      p:nth-child(2) {
+        color: $gray-04;
+        font-size: 14px;
+        align-self: flex-end;
+      }
+
+    }
+  }
+}

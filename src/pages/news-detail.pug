@@ -1,0 +1,9 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Почему нужно использовать оригинальные фильтры'
+    - var page = 'page-news-detail'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Новостной блог', 'Почему нужно использовать оригинальные фильтры')

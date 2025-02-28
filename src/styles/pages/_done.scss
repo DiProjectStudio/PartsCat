@@ -6,5 +6,109 @@
     background: $white;
     padding: 30px 20px;
     color: $black;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+
+    @include breakpoint(md) {
+      padding: 60px;
+      max-width: 760px;
+    }
+
+    @include breakpoint(lg) {
+      padding: 60px 38px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: 960px;
+      padding: 60px 120px;
+    }
+
+    h3, .h3-title {
+      text-align: center;
+    }
   }
+
+  &__details {
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 160%; /* 22.4px */
+    font-size: 14px;
+    margin-bottom: 30px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+
+  &__bill {
+    @include flexColumn;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    align-items: center;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    &-link {
+      font-weight: 600;
+      @include flexAlignCenter;
+      gap: 10px;
+
+      &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url("../icons/icon_bill.svg") no-repeat center center;
+      }
+    }
+  }
+
+  &__payment, &__download {
+    font-size: 14px;
+    line-height: 160%;
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+    }
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+
+  &__buttons {
+    @include flexColumn;
+    margin-top: 30px;
+    gap: 10px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      font-size: 24px;
+      letter-spacing: 0.96px;
+      padding: 12px 30px;
+    }
+  }
+
 }

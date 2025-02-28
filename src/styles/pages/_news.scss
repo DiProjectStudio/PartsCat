@@ -1,0 +1,23 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.news {
+  &__items {
+    display: grid;
+    gap: 40px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px 20px;
+    }
+
+    @include breakpoint(xl) {
+      column-gap: 30px;
+    }
+  }
+}
