@@ -1,0 +1,26 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Сервисы'
+    - var page = 'page-services'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Сервис')
+    section.services
+        .container
+            .servives__inner
+                h1 Сервис
+                .services__items
+                    -
+                        var servicesItems = [
+                            "Капитальный ремонт двигателей", "Компьютерная диагностика",
+                            "Выездной/полевой ремонт", "Ремонт узлов и агрегатов",
+                            "Ремонт гидравлики", "Расточно-наплавочные работы",
+                            "Техническое обслуживание",
+                        ]
+                    each item, index in servicesItems
+                        a(href="service.html").services__item
+                            .services__item-title= item
+                            .services__item-image
+                                +img(`services-item-image-${index + 1}.png`)

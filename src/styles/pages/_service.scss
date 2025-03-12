@@ -1,0 +1,459 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.service-main {
+  position: relative;
+  height: 590px;
+  z-index: 1;
+  padding: 40px 0;
+  @include flexColumn;
+  justify-content: space-between;
+
+  @include breakpoint(xl) {
+    height: 650px;
+  }
+
+  &__inner {
+    h1 {
+      margin-bottom: 10px;
+      max-width: 804px;
+    }
+
+    p {
+      line-height: 160%;
+      max-width: 804px;
+
+      @include breakpoint(md) {
+        font-size: 20px;
+      }
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 18px 50px;
+      font-size: 32px;
+
+      @include breakpoint(lg) {
+        font-size: 40px;
+        padding: 18px 55px;
+      }
+    }
+  }
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 0.9;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .breadcrumbs {
+    margin: 0;
+  }
+}
+
+.service-diagnostic {
+  &__inner {
+
+  }
+
+  &__items {
+    display: grid;
+    gap: 20px;
+
+    .service-diagnostic__item {
+      display: flex;
+      gap: 10px;
+
+      @include breakpoint(md) {
+        gap: 20px;
+      }
+
+      span {
+        width: 32px;
+        height: 32px;
+        @include flexCenterCenter;
+        background: $brand;
+        color: $black;
+        font-family: "Druk Cyr", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        flex-shrink: 0;
+
+        @include breakpoint(md) {
+          width: 40px;
+          height: 40px;
+          font-size: 30px;
+        }
+      }
+
+      p {
+        line-height: 160%;
+
+        @include breakpoint(md) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.service-about {
+  &__content {
+    display: grid;
+    gap: 20px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      gap: 30px;
+    }
+
+    p {
+      line-height: 160%;
+    }
+
+    &-image {
+      height: 255px;
+      width: 100%;
+
+      @include breakpoint(md) {
+        height: 448px;
+      }
+
+      @include breakpoint(lg) {
+        height: 362px;
+      }
+
+      @include breakpoint(xl) {
+        height: 436px;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.service-examples {
+  &__subtitle {
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include breakpoint(lg) {
+      font-size: 32px;
+    }
+  }
+
+  p {
+    line-height: 160%;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+
+    @include breakpoint(lg) {
+      @include columCountMaxWidth(11);
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(9);
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+    display: grid;
+    gap: 30px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16px;
+      row-gap: 30px;
+    }
+
+    @include breakpoint(lg) {
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+      column-gap: 30px;
+    }
+
+    &-before, &-after {
+      &-title {
+        font-family: "Druk Cyr", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @include breakpoint(lg) {
+          font-size: 30px;
+          margin-bottom: 30px;
+        }
+      }
+
+      &-image {
+        @include breakpoint(md) {
+          height: 252px;
+        }
+
+        @include breakpoint(lg) {
+          height: 431px;
+        }
+
+        @include breakpoint(xl) {
+          height: 522px;
+        }
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-video {
+      width: 100%;
+      height: 128px;
+
+      @include breakpoint(md) {
+        height: 264px;
+        grid-row: 2 / 3;
+        grid-column: span 2;
+      }
+
+      @include breakpoint(lg) {
+        height: 436px;
+      }
+
+      @include breakpoint(xl) {
+        height: 526px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.service-works {
+  &__items {
+    display: grid;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-works__item {
+      padding: 20px;
+      background: $white;
+      color: $black;
+      display: grid;
+      gap: 20px;
+
+
+
+      &-title {
+        @include flexAlignCenter;
+        gap: 10px;
+
+        span {
+          font-family: "Druk Cyr", sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+
+          &:nth-child(1) {
+            width: 28px;
+            height: 28px;
+            background: $brand;
+            flex-shrink: 0;
+            font-size: 20px;
+            @include flexCenterCenter;
+
+            @include breakpoint(md) {
+              font-size: 24px;
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+          &:nth-child(2) {
+            font-size: 24px;
+
+            @include breakpoint(md) {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+
+      p {
+        line-height: 160%;
+      }
+
+      &-list {
+        p {
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        ul {
+          display: grid;
+          gap: 10px;
+
+          li {
+            @include flexAlignCenter;
+            gap: 12px;
+
+            &:before {
+              content: "";
+              display: block;
+              margin: 9px;
+              width: 8px;
+              height: 8px;
+              background: $brand;
+              border-radius: 50%;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.service-stages {
+  &__inner {
+
+  }
+
+  &__items {
+    margin-right: -16px;
+
+    @include breakpoint(md) {
+      margin-right: unset;
+    }
+
+    .swiper-wrapper {
+      @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 30px;
+      }
+    }
+
+    .swiper-slide {
+      height: unset;
+
+      @include breakpoint(md) {
+        width: unset!important;
+      }
+
+    }
+
+    .swiper-pagination {
+      position: static;
+      margin-top: 40px;
+    }
+    .service-stages__item {
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+      background: $white;
+      color: $black;
+      height: 100%;
+      grid-auto-rows: fit-content(100%);
+
+      &-index {
+        color: $brand;
+        font-family: "Druk Cyr", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include breakpoint(lg) {
+          font-size: 60px;
+        }
+
+        @include breakpoint(xl) {
+          font-size: 94px;
+        }
+      }
+
+      &-title {
+        font-family: "Druk Cyr", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include breakpoint(lg) {
+          font-size: 32px;
+        }
+
+        @include breakpoint(xl) {
+          font-size: 40px;
+        }
+      }
+
+      ul {
+        display: grid;
+        gap: 10px;
+
+        li {
+          @include flexAlignCenter;
+          gap: 12px;
+
+          &:before {
+            content: "";
+            display: block;
+            margin: 9px;
+            width: 8px;
+            height: 8px;
+            background: $brand;
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}

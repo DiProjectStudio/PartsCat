@@ -93,7 +93,23 @@ export function initializeSlider() {
                 spaceBetween: 30
             }
         }
-    })
+    });
+
+    const serviceStagesSlider = new Swiper(".service-stages .swiper", {
+        modules: [Pagination],
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        pagination: {
+            el: ".service-stages .swiper-pagination",
+        },
+        breakpoints: {
+            744: {
+                enabled: false,
+                slidesPerView: 6,
+                spaceBetween: 0
+            }
+        }
+    });
 
 
     // const heroMain = new Swiper('.hero-main .swiper', {

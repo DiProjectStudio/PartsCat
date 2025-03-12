@@ -1,0 +1,198 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Капитальный ремонт двигателей спецтехники'
+    - var page = 'page-service'
+
+block main
+    section.service-main
+        .container
+            .service-main__inner
+                h1 Капитальный ремонт двигателей спецтехники
+                p.
+                    Мы предлагаем профессиональные услуги по капитальному
+                    ремонту двигателей спецтехники CAT, гарантируя
+                    восстановление их работоспособности и продление
+                    срока службы вашей техники.
+                button.btn.btn--brand Оставить заявку
+        include ../components/_breadcrumbs
+        +breadcrumbs("Сервис", "Капитальный ремонт двигателей спецтехники")
+        .service-main-image
+            +img('service-main-image.jpg')
+    section.service-diagnostic
+        .container
+            .services-diagnostic__inner
+                .section-title Когда нужна компьютерная диагностика?
+                .service-diagnostic__items
+                    .service-diagnostic__item
+                        span 1
+                        p При появлении ошибок на панели приборов
+                    .service-diagnostic__item
+                        span 2
+                        p При снижении мощности или нестабильной работе двигателя
+                    .service-diagnostic__item
+                        span 3
+                        p При проблемах с трансмиссией или гидравликой.
+                    .service-diagnostic__item
+                        span 4
+                        p При подготовке к покупке подержанной спецтехники (для проверки состояния).
+                    .service-diagnostic__item
+                        span 5
+                        p Для планового технического обслуживания.
+
+    section.service-about
+        .container
+            .service-about__inner
+                .section-title Об услуге
+                .service-about__content
+                    p.
+                        Lorem ipsum dolor sit amet consectetur. Ultrices at
+                        viverra odio auctor cras. Vitae arcu duis odio cursus
+                        turpis massa vulputate ut. Urna purus diam nibh egestas
+                        tristique. Nunc elementum sit molestie turpis a tempor
+                        sollicitudin faucibus felis. Eget netus odio vel rhoncus
+                        aliquam. Interdum sed facilisis nisl aliquam turpis. Morbi
+                        feugiat fermentum aliquet porta platea integer aliquet.
+                        Aliquet lectus sit mi cursus venenatis cursus. Egestas tortor
+                        egestas nullam ac sed nulla. Turpis eget metus auctor amet ac.
+                        Pellentesque rhoncus auctor tellus quis. Amet bibendum vitae
+                        urna laoreet metus id. Facilisis amet hendrerit netus sit eu
+                        vestibulum semper aliquet. Facilisi fermentum a viverra ac.
+                        Malesuada vitae felis ultricies risus fringilla ornare at
+                        tortor blandit. Enim ultrices amet donec duis vel justo orci
+                        orci aliquet. Urna lorem phasellus arcu egestas amet
+                        tristique. Dui at iaculis amet facilisis condimentum. Id
+                        sem fermentum quam mattis tristique dapibus purus est. Lorem
+                        ipsum dolor sit amet consectetur. Ultrices at viverra odio
+                        auctor cras. Vitae arcu duis odio cursus turpis massa
+                        vulputate ut. Urna purus diam nibh egestas tristique. Nunc
+                        elementum sit molestie turpis a tempor sollicitudin faucibus
+                        felis. Eget netus odio vel rhoncus aliquam.
+                    .service-about__content-image
+                        +img('service-about-image.jpg')
+
+    section.service-examples
+        .container
+            .service-examples__inner
+                .section-title Пример выполненного ремонта
+                .service-examples__subtitle Капитальный ремонт ДВС CAT3126
+                p.
+                    Lorem ipsum dolor sit amet consectetur. Ultrices at
+                    viverra odio auctor cras. Vitae arcu duis odio cursus
+                    turpis massa vulputate ut. Urna purus diam nibh egestas
+                    tristique. Nunc elementum sit molestie turpis a tempor
+                    sollicitudin faucibus felis. Eget netus odio vel rhoncus
+                    aliquam. Interdum sed facilisis nisl aliquam turpis. Morbi
+                    feugiat fermentum aliquet porta platea integer aliquet.
+                    Aliquet lectus sit mi cursus venenatis cursus. Egestas
+                    tortor egestas nullam ac sed nulla.
+                .service-examples__content
+                    .service-examples__content-before
+                        .service-examples__content-before-title Фото ДО
+                        .services-examples__content-before-image
+                            +img('services-examples-image-before.jpg')
+                    .service-examples__content-after
+                        .service-examples__content-after-title Фото После
+                        .service-examples__content-after-image
+                            +img('services-examples-image-after.jpg')
+                    .service-examples__content-video
+                        iframe(src="https://rutube.ru/play/embed/e5f67f1e96986ee59f8a29d40ddba0c9/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+
+    section.service-works
+        .container
+            .service-works__inner
+                .section-title Основные виды работ
+                .service-works__items
+                    .service-works__item
+                        .service-works__item-title
+                            span 1
+                            span Расточка
+                        p.
+                            Это процесс механической обработки внутренних
+                            или наружных поверхностей деталей для
+                            восстановления их геометрии.
+                        .service-works__item-list
+                            p Применяется для:
+                            ul
+                                li Расточки цилиндров двигателя.
+                                li Обработки посадочных мест под подшипники.
+                                li Восстановления отверстий, валов и других элементов.
+                    .service-works__item
+                        .service-works__item-title
+                            span 2
+                            span Наплавка
+                        p.
+                            Это процесс нанесения дополнительного слоя металла
+                            на изношенные поверхности с помощью сварки или
+                            других методов.
+                        .service-works__item-list
+                            p Применяется для:
+                            ul
+                                li Восстановления размеров и формы деталей.
+                                li Увеличения износостойкости поверхностей.
+                                li Ремонта трещин, сколов и других повреждений.
+    section.service-stages
+        .container
+            .service-stages__inner
+                .section-title Этапы выполнения работ
+                .service-stages__items.swiper
+                    -
+                        var stages = [
+                            {
+                                title: "Диагностика",
+                                list: [
+                                    "Оценка степени износа и повреждений детали.",
+                                    "Определение необходимого объема работ."
+                                ]
+                            },
+                            {
+                                title: "Подготовка",
+                                list: [
+                                    "Очистка детали от загрязнений и старого покрытия.",
+                                    "Дефектовка (выявление трещин, деформаций)."
+                                ]
+                            },
+                            {
+                                title: "Расточка",
+                                list: [
+                                    "Механическая обработка детали для восстановления геометрии"
+                                ]
+                            },
+                            {
+                                title: "Наплавка",
+                                list: [
+                                    "Нанесение слоя металла на изношенные поверхности"
+                                ]
+                            },
+                            {
+                                title: "Обработка",
+                                list: [
+                                    "Механическая обработка наплавленного слоя до требуемых размеров.",
+                                    "Шлифовка, полировка или хонингование."
+                                ]
+                            },
+                            {
+                                title: "Контроль качества",
+                                list: [
+                                    "Проверка размеров, формы и качества поверхности.",
+                                    "Тестирование детали на соответствие техническим требованиям."
+                                ]
+                            },
+                        ]
+                    .swiper-wrapper
+                        each stage, index in stages
+                            .swiper-slide
+                                .service-stages__item
+                                    .service-stages__item-index= `0${index + 1}`
+                                    .service-stages__item-title= title
+                                    ul
+                                        each listItem in stage.list
+                                            li= listItem
+                    .swiper-pagination
+
+    include ../components/sections/_section-advantages
+
+
+
+
+
