@@ -192,6 +192,78 @@ block main
 
     include ../components/sections/_section-advantages
 
+    section.service-price
+        .container
+            .service-price__inner
+                .section-title Стоимость и сроки
+                .service-price__text
+                    p Стоимость капитального ремонта двигателя рассчитывается индивидуально и зависит от:
+                    br
+                    ul
+                        li Модели двигателя.
+                        li Степени износа.
+                        li Необходимости замены конкретных деталей.
+                    br
+                    p.
+                        Мы предоставим точную смету после диагностики.
+                        Сроки выполнения ремонта зависят от сложности работы и
+                        наличия запчастей.
+
+                .service-price__table
+                    .table
+                        .table__head
+                            .td Вид работы
+                            .td Сроки проведения ремонта, дней
+                            .td Стоимость, руб.
+                        .table__body
+                            .tr
+                                .td Выезд в пределах МКАД
+                                .td в течение 1 дня (включая выходные)
+                                .td от 3600, ₽
+                            .tr
+                                .td Выезд за пределы МКАД
+                                .td в течение 1 дня (включая выходные)
+                                .td от 3600, ₽
+                            .tr
+                                .td Диагностика, ремонт спецтехники
+                                .td в течение 1 дня (включая выходные)
+                                .td от 3600, ₽
+                            .tr
+                                .td Демонтаж-монтаж ДВС, КПП, МОСТОВ
+                                .td в течение 1 дня (включая выходные)
+                                .td от 3600, ₽
+
+    section.service-feedback
+        .container
+            .service-feedback__inner
+                .service-feedback__title Оставьте заявку на ремонт двигателя
+                .service-feedback__form
+                    form
+                        input(type="text" placeholder="Имя*").input.input--white
+                        input(type="tel" placeholder="Телефон*" data-phone-number).input.input--white
+                        button.btn.btn--black Отправить
+                    .service-feedback__form-agree.
+                        Нажимая на кнопку “Отправить”, вы соглашаетесь на обработку персональных данных и
+                        подтверждаете, что ознакомлены с <a href="javascript:void(0)">политикой конфиденциальности</a>
+
+    section.service-certificates
+        .container
+            .service-certificates__inner
+                .service-certificates__top
+                    .section-title Сертификаты
+                    .swiper-nav.swiper-nav--yellow
+                        button.button-prev
+                        button.button-next
+                .service-certificates__slider.swiper
+                    .swiper-wrapper
+                        - var n = 1;
+                        while n < 5
+                            .swiper-slide
+                                .service-certificates__item
+                                    +img(`service-certificate-${n}.png`)
+                            - n++;
+                    .swiper-pagination
+
 
 
 

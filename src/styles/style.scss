@@ -1,19 +1,19 @@
-@use 'base/mixins';
-@use 'base/fonts';
-@use 'base/variables';
-@use 'base/normalize';
-@use 'base/reset';
-@use 'base/container';
-@use 'base/animation';
-@use 'base/ui';
+@use "base/mixins";
+@use "base/fonts";
+@use "base/variables";
+@use "base/normalize";
+@use "base/reset";
+@use "base/container";
+@use "base/animation";
+@use "base/ui";
 
-@use 'includes/header';
-@use 'includes/footer';
+@use "includes/header";
+@use "includes/footer";
 
-@use 'components/breadcrumbs';
-@use 'components/swiper-custom';
-@use 'components/fancybox-custom';
-@use 'components/popups';
+@use "components/breadcrumbs";
+@use "components/swiper-custom";
+@use "components/fancybox-custom";
+@use "components/popups";
 @use "components/sidebar";
 @use "components/sections/section-products-slider";
 @use "components/product-card";
@@ -26,15 +26,18 @@
 @use "components/cart-item";
 @use "components/maps-block";
 
-@use 'pages/index';
-@use 'pages/catalog';
-@use 'pages/product';
-@use 'pages/cart';
-@use 'pages/order';
-@use 'pages/done';
-@use 'pages/contacts';
-@use 'pages/news';
-@use 'pages/news-detail';
-@use 'pages/services';
-@use 'pages/service';
+@use "pages/index";
+@use "pages/catalog";
+@use "pages/product";
+@use "pages/cart";
+@use "pages/order";
+@use "pages/done";
+@use "pages/contacts";
+@use "pages/news";
+@use "pages/news-detail";
+@use "pages/services";
+@use "pages/service";
+@use "pages/delivery";
+@use "pages/return";
+@use "pages/search";
 

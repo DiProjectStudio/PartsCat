@@ -1,0 +1,17 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.return {
+  p {
+    line-height: 160%;
+
+    @include breakpoint(lg) {
+      font-size: 20px;
+      @include columCountMaxWidth(8);
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(7);
+    }
+  }
+}

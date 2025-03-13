@@ -282,7 +282,6 @@
       gap: 20px;
 
 
-
       &-title {
         @include flexAlignCenter;
         gap: 10px;
@@ -353,6 +352,8 @@
 }
 
 .service-stages {
+  overflow: hidden;
+
   &__inner {
 
   }
@@ -385,7 +386,7 @@
       height: unset;
 
       @include breakpoint(md) {
-        width: unset!important;
+        width: unset !important;
       }
 
     }
@@ -394,6 +395,7 @@
       position: static;
       margin-top: 40px;
     }
+
     .service-stages__item {
       padding: 20px;
       display: grid;
@@ -455,5 +457,213 @@
         }
       }
     }
+  }
+}
+
+.service-price {
+  overflow: hidden;
+
+  &__text {
+    line-height: 160%;
+
+
+    li {
+      list-style: disc;
+      margin-left: 25px;
+    }
+  }
+
+  &__table {
+    margin-right: -16px;
+    max-width: 100vw;
+    overflow-x: auto;
+    margin-top: 40px;
+
+    @include breakpoint(md) {
+      max-width: 100%;
+      margin-right: unset;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 60px;
+    }
+
+
+    .table {
+      color: $black;
+      border: 1px solid $gray-02;
+      overflow-x: auto;
+      width: fit-content;
+
+      @include breakpoint(md) {
+        width: unset;
+      }
+
+
+      &__head {
+        font-weight: 600;
+        background: $brand;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(218px, 1fr));
+        grid-auto-rows: 76px;
+
+        @include breakpoint(xl) {
+          font-size: 20px;
+        }
+
+        .td {
+          padding: 12px;
+          @include flexAlignCenter;
+
+          &:not(:last-child) {
+            border-right: 1px solid $gray-02;
+          }
+        }
+      }
+
+      &__body {
+        .tr {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(218px, 1fr));
+          grid-auto-rows: 76px;
+          background: $white;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $gray-02;
+          }
+
+          .td {
+            padding: 12px;
+            @include flexAlignCenter;
+
+            &:not(:last-child) {
+              border-right: 1px solid $gray-02;
+            }
+
+            &:first-child {
+              font-weight: 600;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.service-feedback {
+  background: $brand;
+  padding: 40px 10px;
+
+  @include breakpoint(md) {
+    padding: 40px 0;
+  }
+
+  &__title {
+    color: $black;
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include breakpoint(lg) {
+      font-size: 42px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 52px;
+    }
+  }
+
+  &__form {
+    margin-top: 20px;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      grid-auto-rows: 66px;
+      max-width: 100%;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) 226px;
+      }
+
+      @include breakpoint(lg) {
+        grid-auto-rows: 87px;
+        gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) 326px;
+      }
+
+      .btn {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+      }
+    }
+
+    &-agree {
+      color: $gray-04;
+      font-size: 14px;
+      margin-top: 20px;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      a {
+        display: inline;
+        text-decoration: underline;
+        line-height: 160%;
+      }
+    }
+  }
+}
+
+.service-certificates {
+  &__top {
+    .section-title {
+      @include breakpoint(lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint(lg) {
+      @include flexCenterBetween;
+      margin-bottom: 60px;
+    }
+
+
+    .swiper-nav {
+      display: none;
+
+      @include breakpoint(lg) {
+        @include flexAlignCenter;
+        gap: 20px;
+      }
+    }
+  }
+
+  .swiper {
+    &-pagination {
+      position: static;
+      margin-top: 20px;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+
+    &-slide {
+      height: unset;
+    }
+  }
+
+  &__item {
+    @include flexCenterCenter;
+    height: 100%;
+    background: #2C2C2C;
   }
 }

@@ -66,3 +66,48 @@
     @include textLimit(1);
   }
 }
+
+
+.fancybox__slide {
+  padding: 0;
+}
+
+.popup-close-btn {
+  width: 40px;
+  height: 40px;
+  background: $brand;
+  @include flexCenterCenter;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.popup {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  padding: 20px 10px;
+
+  &-title {
+
+  }
+
+  .f-button.is-close-btn {
+    display: none;
+  }
+}
+
+.popup-callback {
+
+  &__inner {
+    display: grid;
+    gap: 40px;
+    .popup-close-btn {
+      justify-self: flex-end;
+    }
+  }
+
+
+}

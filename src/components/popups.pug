@@ -1,6 +1,18 @@
+
+// ПОПАП ПРИ ДОБАВЛЕНИИ ТОВАРА В КОРЗИНУ
 .popup-in-cart
     .popup-in-cart__inner
         .popup-in-cart__image
             +img('product-card-image.png')
         .popup-in-cart__title Товар добавлен в корзину
         .popup-in-cart__product Фильтр воздушный SEM 518-4406
+
+// ПОПАП ОБРАТНОЙ СВЯЗИ
+.popup.popup-callback#popupCallback
+    .popup-callback__inner
+        button(data-fancybox-close).popup-close-btn
+            include ../icons/icon-x-popup-close.svg
+        .popup-title ОСТАВЬТЕ НОМЕР ТЕЛЕФОНА И МЫ ПЕРЕЗВОНИМ ВАМ В ТЕЧЕНИЕ 30 МИНУТ
+
+
+

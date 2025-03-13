@@ -1,0 +1,26 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Поиск'
+    - var page = 'page-search'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Поиск')
+    section.search
+        .container
+            .search__inner
+                .section-title Поиск
+                .search__input
+                    input(type="search" placeholder="Поиск запчасти по артикулу").input.input--gray
+                    button.btn.btn--brand
+                        include ../icons/icon_search.svg
+                        span Поиск
+                .search__count Найдено: 10 товаров
+                .search__results
+                    - var n = 12;
+                    while n > 0
+                        include ../components/_product-card
+                        - n--;
+                include ../components/_pagination
+

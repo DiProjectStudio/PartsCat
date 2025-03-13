@@ -212,10 +212,6 @@
   }
 }
 
-.order__total-wrapper {
-
-}
-
 .order__total {
   background: $white;
   padding: 16px;
@@ -325,9 +321,9 @@
       gap: 4px;
       align-self: flex-end;
 
-      img {
-        width: unset;
-        height: unset;
+      svg {
+        height: 14px;
+        width: auto;
       }
     }
   }

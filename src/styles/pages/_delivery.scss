@@ -1,0 +1,61 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.delivery {
+
+  &__inner {
+    @include flexColumn;
+    gap: 40px;
+  }
+
+  &__section {
+    @include flexColumn;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      gap: 20px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 30px;
+      @include columCountMaxWidth(8);
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(7);
+    }
+
+    &-title {
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      line-height: 160%;
+    }
+
+    &-banks {
+      @include flexAlignCenter;
+      gap: 10px;
+
+      svg {
+        height: 24px;
+        width: auto;
+
+        @include breakpoint(md) {
+          height: 38px;
+        }
+
+        @include breakpoint(lg) {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
