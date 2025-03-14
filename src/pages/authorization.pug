@@ -1,0 +1,32 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Авторизация'
+    - var page = 'page-authorization'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Авторизация')
+    section.authorization
+        .container
+            .authorization__inner
+                h1 Авторизация
+                .auth-tabs
+                    a(href="authorization.html").auth-tab.active Авторизация
+                    a(href="registration.html").auth-tab Регистрация
+                .authorization__form
+                    form
+                        input(type="email" placeholder="E-mail*").input.input--white
+                        .input-password
+                            input(type="password" placeholder="Пароль*").input.input--white
+                            .input-password__hidden.input-password__state
+                                include ../icons/icon_eye-off.svg
+                            .input-password__showed.input-password__state
+                                include ../icons/icon_eye-on.svg
+                        .authorization__form-bottom
+                            button().btn.btn--brand Войти
+                            a(href="javascript:void(0)").authorization__form-bottom-forget Не помню пароль
+                    .authorization__form-agree.
+                        Нажимая на кнопку “Войти”, вы соглашаетесь на обработку персональных
+                        данных и подтверждаете, что ознакомлены с
+                        <a>политикой конфиденциальности</a>

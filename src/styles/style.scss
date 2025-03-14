@@ -25,6 +25,7 @@
 @use "components/counter";
 @use "components/cart-item";
 @use "components/maps-block";
+@use "components/page-selector";
 
 @use "pages/index";
 @use "pages/catalog";
@@ -40,4 +41,8 @@
 @use "pages/delivery";
 @use "pages/return";
 @use "pages/search";
+@use "pages/authorization";
+@use "pages/registation";
+@use "pages/user";
+@use "pages/orders";
 

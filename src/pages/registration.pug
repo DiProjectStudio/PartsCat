@@ -1,0 +1,36 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Регистрация'
+    - var page = 'page-registration'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Регистрация')
+    .registration
+        .container
+            .registration__inner
+                h1 Регистрация
+                .auth-tabs
+                    a(href="authorization.html").auth-tab Авторизация
+                    a(href="registration.html").auth-tab.active  Регистрация
+                .registration__form
+                    form
+                        input(type="email" placeholder="E-mail*").input.input--white
+                        .input-password
+                            input(type="password" placeholder="Введите пароль*").input.input--white
+                            .input-password__hidden.input-password__state
+                                include ../icons/icon_eye-off.svg
+                            .input-password__showed.input-password__state
+                                include ../icons/icon_eye-on.svg
+                        .input-password
+                            input(type="password" placeholder="Повторите пароль*").input.input--white
+                            .input-password__hidden.input-password__state
+                                include ../icons/icon_eye-off.svg
+                            .input-password__showed.input-password__state
+                                include ../icons/icon_eye-on.svg
+                        button().btn.btn--brand Зарегистрироваться
+                    .registration__form-agree.
+                        Нажимая на кнопку “Войти”, вы соглашаетесь на обработку персональных
+                        данных и подтверждаете, что ознакомлены с
+                        <a>политикой конфиденциальности</a>

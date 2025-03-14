@@ -68,8 +68,14 @@
 }
 
 
-.fancybox__slide {
+.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
   padding: 0;
+}
+
+.fancybox__backdrop {
+  opacity: 0.4;
+  background: $black;
+  will-change: unset;
 }
 
 .popup-close-btn {
@@ -90,8 +96,22 @@
   background: $black;
   padding: 20px 10px;
 
-  &-title {
+  @include breakpoint(md) {
+    width: 695px;
+    height: auto;
+    padding: 40px;
+  }
 
+  &-title {
+    color: $white;
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+      font-size: 52px;
+    }
   }
 
   .f-button.is-close-btn {
@@ -109,5 +129,48 @@
     }
   }
 
+  &__form {
+    form {
+      display: grid;
+      gap: 10px;
+      .input, .btn {
+        height: 66px;
+      }
 
+      .btn {
+        margin-top: 10px;
+        font-size: 24px;
+        letter-spacing: 0.96px;
+      }
+    }
+
+    &-agree {
+      color: $white;
+      line-height: 160%;
+      margin-top: 10px;
+      a {
+        display: inline;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.popup-success {
+  &__inner {
+    display: grid;
+    gap: 40px;
+    .popup-close-btn {
+      justify-self: flex-end;
+    }
+
+    .icon-check {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+* {
+  --fancybox-bg: var(--color-black);
 }

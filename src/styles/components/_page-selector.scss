@@ -1,0 +1,123 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.page-selector {
+  color: $black;
+  font-family: "Druk Cyr", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  background: $white;
+  padding: 0 16px;
+  margin-bottom: 20px;
+  position: relative;
+
+  @include breakpoint(md) {
+    padding: 0 20px;
+  }
+
+  @include breakpoint(lg) {
+    order: 2;
+    height: fit-content;
+    padding: 0;
+  }
+
+  &.showdown {
+    .page-selector__options {
+
+    }
+
+    .selected-page {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .selected-page {
+    padding: 16px 0;
+    @include flexCenterBetween;
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      padding: 20px 0;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+
+    &:after {
+      content: "";
+      background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+      width: 16px;
+      height: 16px;
+      transition: $transition;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $white;
+    padding: 0 16px;
+    width: 100%;
+    display: grid;
+
+    @include breakpoint(md) {
+      padding: 0 20px;
+    }
+
+    @include breakpoint(lg) {
+      position: static;
+      padding: 10px 30px;
+      visibility: visible!important;
+      height: fit-content!important;
+      opacity: 1!important;
+    }
+
+    .page-selector__option {
+      border-top: 1px solid $gray-02;
+      padding: 12px 0;
+      cursor: pointer;
+
+      @include breakpoint(lg) {
+        font-size: 30px;
+        border-top: none;
+        padding: 20px 0;
+        transition: $transition;
+        @include flexCenterBetween;
+      }
+
+      &:after {
+        @include breakpoint(lg) {
+          content: "";
+          width: 16px;
+          height: 16px;
+          background: url("../icons/icon_arrow-right.svg") no-repeat center center;
+        }
+      }
+
+      &:hover {
+        @include breakpoint(lg) {
+          color: $hover;
+        }
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid $gray-02;
+      }
+
+      &.selected {
+        @include breakpoint(lg) {
+          color: $brand;
+        }
+      }
+
+
+    }
+  }
+}

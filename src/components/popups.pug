@@ -13,6 +13,26 @@
         button(data-fancybox-close).popup-close-btn
             include ../icons/icon-x-popup-close.svg
         .popup-title ОСТАВЬТЕ НОМЕР ТЕЛЕФОНА И МЫ ПЕРЕЗВОНИМ ВАМ В ТЕЧЕНИЕ 30 МИНУТ
+        .popup-callback__form
+            form
+                input(type="text" placeholder="Ваше имя*").input.input--white
+                input(type="tel" placeholder="Телефон*" data-phone-number).input.input--white
+                button(data-src="#popupSuccess" data-fancybox).btn.btn--brand Отправить
+            .popup-callback__form-agree.
+                Нажимая на кнопку “отправить”, вы соглашаетесь на обработку
+                персональных данных и подтверждаете, что ознакомлены с
+                <a>политикой конфиденциальности</a>
+
+// ПОПАП УСПЕШНОЙ ОТПРАВКИ
+.popup.popup-success#popupSuccess
+    .popup-success__inner
+        button(data-fancybox-close).popup-close-btn
+            include ../icons/icon-x-popup-close.svg
+        .icon-check
+            include ../icons/icon_check--yellow-transparent.svg
+        .popup-title
+            p Спасибо!
+            p заявка успешно отправлена
 
 
 

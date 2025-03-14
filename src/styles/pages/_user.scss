@@ -1,0 +1,90 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.user {
+  &__inner {
+    &-wrapper {
+      @include breakpoint(lg) {
+        grid-template-columns: 8fr 4fr;
+        gap: 20px;
+        display: grid;
+      }
+
+      @include breakpoint(xl) {
+        gap: 30px;
+      }
+    }
+  }
+}
+
+.user-main {
+  background: $white;
+  padding: 16px;
+  color: $black;
+
+  @include breakpoint(lg) {
+    order: 1;
+  }
+
+  &__data {
+    form {
+
+    }
+
+    &-field {
+      display: grid;
+      gap: 8px;
+
+      @include breakpoint(md) {
+        grid-template-columns: 298px 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .input {
+        height: 66px;
+        width: 100%;
+      }
+
+      & + .user-main__data-field {
+        margin-top: 16px;
+
+        @include breakpoint(md) {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &-buttons {
+      margin-top: 40px;
+      display: grid;
+      gap: 10px;
+      grid-auto-rows: 66px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, fit-content(100%));
+        gap: 20px;
+      }
+
+      .btn {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+
+        @include breakpoint(md) {
+          padding: 18px 40px;
+        }
+
+        &.btn--gray {
+          gap: 20px;
+          &:before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: url("../icons/icon_x--black-without-rounding.svg") no-repeat center center;
+          }
+        }
+      }
+    }
+  }
+}
+

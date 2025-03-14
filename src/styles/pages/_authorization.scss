@@ -1,0 +1,75 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.authorization {
+  &__inner {
+    @include breakpoint(md) {
+      @include columCountMaxWidth(9);
+    }
+
+    @include breakpoint(lg) {
+      max-width: 50%;
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(5);
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    form {
+      display: grid;
+      gap: 10px;
+
+      .input {
+        height: 66px;
+        width: 100%;
+      }
+
+      .btn {
+        font-size: 32px;
+        letter-spacing: 1.28px;
+        padding: 18px;
+
+        @include breakpoint(md) {
+          padding: 18px 50px;
+        }
+      }
+    }
+
+    &-bottom {
+      margin-top: 10px;
+      @include flexColumn;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+      &-forget {
+        font-weight: 600;
+        color: $brand;
+      }
+    }
+
+    &-agree {
+      font-size: 14px;
+      line-height: 160%;
+      margin-top: 20px;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      a {
+        display: inline;
+        text-decoration: underline;
+      }
+    }
+  }
+}

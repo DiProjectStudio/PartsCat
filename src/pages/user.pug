@@ -1,0 +1,58 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Личный кабинет'
+    - var page = 'page-user'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Личный кабинет')
+    section.user
+        .container
+            .user__inner
+                h1 Личный кабинет
+                .user__inner-wrapper
+                    .page-selector(data-showdown)
+                        .selected-page(data-trigger)
+                        .page-selector__options
+                            a(href="user.html").page-selector__option.selected Личные данные
+                            a(href="orders.html").page-selector__option Текущие заказы
+                            a(href="history.html").page-selector__option История заказов
+                    .user-main
+                        .user-main__data
+                            form
+                                .user-main__data-field
+                                    label(for="addressing") Обращение
+                                    input(id="addressing" type="text" value="Иван").input.input--gray
+                                .user-main__data-field
+                                    label(for="firstName") Имя
+                                    input(id="firstName" type="text" value="Иван").input.input--gray
+                                .user-main__data-field
+                                    label(for="lastName") Фамилия
+                                    input(id="lastName" type="text" value="Иванов").input.input--gray
+                                .user-main__data-field
+                                    label(for="patronymic") Отчество
+                                    input(id="patronymic" type="text" value="Иванович").input.input--gray
+                                .user-main__data-field
+                                    label(for="login") Логин (мин. 3 символ)*
+                                    input(id="login" type="text" value="Ivan").input.input--gray
+                                .user-main__data-field
+                                    label(for="password") Новый пароль (мин. 6 символов)
+                                    .input-password
+                                        input(id="password" type="password" value="password").input.input--gray
+                                        .input-password__hidden.input-password__state
+                                            include ../icons/icon_eye-off.svg
+                                        .input-password__showed.input-password__state
+                                            include ../icons/icon_eye-on.svg
+                                .user-main__data-field
+                                    label(for="repeatPassword") Подтверждение пароля
+                                    .input-password
+                                        input(id="repeatPassword" type="password" value="password").input.input--gray
+                                        .input-password__hidden.input-password__state
+                                            include ../icons/icon_eye-off.svg
+                                        .input-password__showed.input-password__state
+                                            include ../icons/icon_eye-on.svg
+                                .user-main__data-buttons
+                                    button.btn.btn--brand Сохранить
+                                    button.btn.btn--gray Сбросить
+

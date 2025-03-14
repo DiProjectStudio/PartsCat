@@ -13,9 +13,7 @@ export function showdown () {
 
             showdownTrigger.addEventListener("click", () => {
                 showdownComponentState(showdownComponent, showdownContent);
-            })
-
-
+            });
         })
     }
 }

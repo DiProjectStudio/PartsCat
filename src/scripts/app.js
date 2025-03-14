@@ -7,6 +7,8 @@ import SortingComponent from './components/sorting.component.js';
 import { showdown } from './features/showdown.js';
 import CounterComponent from './components/counter.component.js';
 import tabActions from './features/tabs.js';
+import passwordVisibility from './features/password-visibility.js';
+import pageSelectorAction from './components/page-selector.js';
 
 export default class App {
     constructor() {
@@ -22,5 +24,7 @@ export default class App {
         new SortingComponent();
         new CounterComponent();
         tabActions();
+        passwordVisibility();
+        pageSelectorAction();
     }
 }

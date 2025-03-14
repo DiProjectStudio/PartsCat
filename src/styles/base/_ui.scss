@@ -421,6 +421,46 @@ section + section {
   }
 }
 
+.auth-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .auth-tab {
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $white;
+
+    @include breakpoint(md) {
+      font-size: 18px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 20px;
+    }
+
+    &.active {
+      color: $brand;
+      border-bottom: 1px solid $brand;
+    }
+  }
+}
+
+.input-password {
+  position: relative;
+  &__state {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__showed {
+    display: none;
+  }
+}
+
 /////////////////////
 /// CARDS & CATALOG
 /////////////////////
