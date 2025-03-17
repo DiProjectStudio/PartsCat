@@ -13,6 +13,12 @@
       @include breakpoint(xl) {
         gap: 30px;
       }
+
+      .orders-main {
+        display: grid;
+        gap: 30px;
+      }
+
     }
   }
 }
@@ -227,7 +233,7 @@
 
     &-repeat, &-cancel {
       @include flexAlignCenter;
-      gap: 8px;
+      gap: 10px;
       text-decoration: underline;
       font-size: 14px;
       line-height: 160%;

@@ -1,0 +1,82 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+
+.history__inner-wrapper {
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 20px;
+  }
+
+  @include breakpoint(xl) {
+    gap: 30px;
+  }
+}
+
+.history__orders {
+  display: grid;
+  gap: 10px;
+
+  @include breakpoint(md) {
+    gap: 20px;
+  }
+
+  @include breakpoint(xl) {
+    gap: 30px;
+  }
+
+  &-item {
+    background: $white;
+    padding: 16px;
+    color: $black;
+
+    @include breakpoint(md) {
+      padding: 20px;
+    }
+
+    @include breakpoint(lg) {
+      padding: 30px;
+    }
+    &-title {
+
+      font-family: "Druk Cyr", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $gray-01;
+
+      @include breakpoint(lg) {
+        font-size: 30px;
+      }
+    }
+
+    &-actions {
+      @include flexCenterBetween;
+      font-size: 14px;
+      line-height: 160%;
+      padding-top: 20px;
+      text-decoration: underline;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      &-repeat {
+        @include flexAlignCenter;
+        gap: 5px;
+
+        @include breakpoint(md) {
+          gap: 10px;
+        }
+        &:before {
+          content: "";
+          width: 16px;
+          height: 16px;
+          background: url("../icons/icon_refresh.svg") no-repeat center center;
+        }
+      }
+    }
+  }
+}

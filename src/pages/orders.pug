@@ -51,7 +51,42 @@ block main
                                         span Не обработан
                                 .item-delivery__service Служба доставки: СДЭК, Доставка в почтамат
 
-                            a(href="javascript:void(0)").orders__item-details Подробнее о заказе
+                            a(href="order-details.html").orders__item-details Подробнее о заказе
+                            .orders__item-actions
+                                a(href="javascript:void(0)").orders__item-actions-repeat Повторить заказ
+                                a(href="javascript:void(0)").orders__item-actions-cancel Отменить заказ
+                        .orders__item
+                            .orders__item-title Заказ № 4 от 21.05.2024 на сумму 10 000 ₽
+                            .orders__item-payment
+                                .item-payment__title Оплата
+                                .item-payment__bill
+                                    .item-payment__bill-main
+                                        .item-payment__bill-main-details Счёт№ 104 от 21.05.2024, <a href="javascript:void">QR-code</a>
+                                        // либо статус status--payed, либо status--not-payed
+                                        .item-payment__bill-main-status.status--payed
+                                            span Не оплачено
+                                            span Оплачено
+                                .item-payment__amount Сумма к оплате по счёту: 10 000 ₽
+                                a(href="javascript:void(0)").item-payment__change Сменить способ оплаты
+
+                            .orders__item-delivery
+                                .item-delivery__title Доставка
+                                .item-delivery__details
+                                    .item-delivery__details-title Отгрузка № 104
+                                    // либо статус status--shipped, либо status--not-shipped
+                                    .item-delivery__details-status.status--not-shipped
+                                        span Не отгружено
+                                        span Отгружено
+                                .item-delivery__shipping
+                                    .item-delivery__shipping-title Статус отгрузки
+                                    // статусы: .status--in-process, .status--processed, .status--not-processed
+                                    .item-delivery__shipping-status.status--in-process
+                                        span Ожидает обработки
+                                        span Обработан
+                                        span Не обработан
+                                .item-delivery__service Служба доставки: СДЭК, Доставка в почтамат
+
+                            a(href="order-details.html").orders__item-details Подробнее о заказе
                             .orders__item-actions
                                 a(href="javascript:void(0)").orders__item-actions-repeat Повторить заказ
                                 a(href="javascript:void(0)").orders__item-actions-cancel Отменить заказ

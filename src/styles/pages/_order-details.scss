@@ -1,0 +1,421 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.order-details__inner-wrapper {
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 20px;
+  }
+}
+
+.order-details {
+  &__back {
+    line-height: 160%;
+    text-decoration: underline;
+    @include flexAlignCenter;
+    gap: 10px;
+
+    &:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url("../icons/icon_arrow-left--white.svg") no-repeat center center;
+    }
+
+    &--top {
+      margin-bottom: 40px;
+    }
+
+    &--bottom {
+      margin-top: 40px;
+    }
+  }
+}
+
+.order-details__main {
+  color: $black;
+  background: $white;
+  padding: 16px;
+
+  @include breakpoint(md) {
+    padding: 20px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 30px;
+  }
+
+  &-section {
+    padding: 20px 0;
+    border-top: 1px solid $gray-02;
+
+    &-title {
+      font-weight: 600;
+      line-height: 160%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-title {
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include breakpoint(lg) {
+      font-size: 30px;
+    }
+  }
+
+  &-info {
+    &-section {
+      display: grid;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        grid-template-columns: 1fr fit-content(100%);
+        justify-content: space-between;
+        grid-auto-rows: fit-content(100%);
+      }
+
+      @include breakpoint(lg) {
+        grid-auto-flow: column;
+        grid-template-columns: unset;
+      }
+
+      &-name, &-status, &-amount {
+        display: grid;
+        gap: 5px;
+        grid-auto-rows: fit-content(100%);
+
+        p {
+          line-height: 160%;
+
+          &:nth-child(1) {
+            font-size: 14px;
+          }
+
+          &:nth-child(2) {
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &-actions {
+        display: grid;
+        gap: 10px;
+
+        @include breakpoint(md) {
+          grid-column: 2 / 3;
+          grid-row: 1 / 4;
+          grid-auto-rows: fit-content(100%);
+        }
+
+        @include breakpoint(lg) {
+          grid-column: unset;
+          grid-row: unset;
+        }
+
+        .btn {
+          font-size: 24px;
+          padding: 12px 30px;
+          width: fit-content;
+        }
+
+        .order-cancel {
+          @include flexAlignCenter;
+          gap: 10px;
+          text-decoration: underline;
+
+          &:before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            background: url("../icons/icon_x--orders.svg") no-repeat center center;
+          }
+        }
+      }
+    }
+
+    &-more {
+      line-height: 160%;
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+  }
+
+  &-payment {
+    &-bill {
+
+      display: grid;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, fit-content(100%)) 1fr;
+        align-items: center;
+      }
+
+      &-status {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 10px;
+        width: fit-content;
+        line-height: 160%;
+        height: fit-content;
+
+        span {
+          display: none;
+        }
+
+        &.status--not-payed {
+          color: $error-primary;
+          background: $error-secondary;
+
+          span:nth-child(1) {
+            display: block;
+          }
+        }
+
+        &.status--payed {
+          color: $success-primary;
+          background: $success-secondary;
+
+          span:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+
+      .btn {
+        font-size: 24px;
+        letter-spacing: 0.96px;
+        padding: 12px 30px;
+        width: fit-content;
+
+        @include breakpoint(md) {
+          justify-self: flex-end;
+        }
+      }
+    }
+
+    &-amount {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    &-change {
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+  }
+
+  &-shipping {
+    &-details, &-status {
+      @include flexColumn;
+      gap: 10px;
+      margin-top: 10px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+      }
+
+      &-title {
+        font-size: 14px;
+        line-height: 160%;
+      }
+
+      &-status {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 10px;
+        width: fit-content;
+        line-height: 160%;
+
+        span {
+          display: none;
+        }
+
+        &.status--not-shipped {
+          color: $error-primary;
+          background: $error-secondary;
+
+          span:nth-child(1) {
+            display: block;
+          }
+        }
+
+        &.status--shipped {
+          color: $success-primary;
+          background: $success-secondary;
+
+          span:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-status {
+      &-process {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 10px;
+        width: fit-content;
+        line-height: 160%;
+
+        span {
+          display: none;
+        }
+
+        &.status--in-process {
+          background: $gray-01;
+
+          span:nth-child(1) {
+            display: block;
+          }
+        }
+
+        &.status--processed {
+          background: $success-secondary;
+          color: $success-primary;
+
+          span:nth-child(2) {
+            display: block;
+          }
+        }
+
+        &.status--not-processed {
+          background: $error-secondary;
+          color: $error-primary;
+
+          span:nth-child(3) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-service {
+      font-size: 14px;
+      line-height: 160%;
+      margin-top: 10px;
+    }
+
+    &-more {
+      line-height: 160%;
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+  }
+
+  &-content {
+    &-products {
+      margin-top: 20px;
+
+      p {
+        font-size: 14px;
+        line-height: 160%;
+      }
+
+
+      &-grid {
+        display: grid;
+        gap: 30px;
+        margin-top: 20px;
+      }
+    }
+
+    &-sum, &-delivery {
+      @include flexCenterBetween;
+      max-width: 434px;
+
+      @include breakpoint(xl) {
+        max-width: 459px;
+      }
+      p:nth-child(1) {
+        font-weight: 600;
+      }
+
+      p:nth-child(2) {
+        font-size: 14px;
+      }
+    }
+
+    &-sum {
+      margin-top: 20px;
+    }
+
+    &-delivery {
+      margin-top: 10px;
+    }
+  }
+}
+
+.order-details__main-content-product {
+  display: grid;
+  grid-template-columns: fit-content(100%) 1fr;
+  gap: 20px;
+
+  @include breakpoint(xl) {
+    grid-template-columns: fit-content(100%) 1fr fit-content(100%);
+  }
+
+  &-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  &-details {
+    &-title {
+      @include textLimit(1);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 160%; /* 25.6px */
+      margin-bottom: 12px;
+    }
+
+    &-specifications {
+      display: grid;
+      gap: 10px;
+      .specification {
+        @include flexAlignCenter;
+        gap: 4px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-payment {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 20px;
+    font-size: 14px;
+    line-height: 160%;
+
+    @include breakpoint(xl) {
+      grid-row: unset;
+      grid-column: unset;
+    }
+
+    &-price, &-discount, &-amount, &-sum {
+      display: grid;
+      grid-auto-rows: fit-content(100%);
+      gap: 12px;
+    }
+
+    &-sum {
+      p:nth-child(2) {
+        font-weight: 600;
+      }
+    }
+  }
+}

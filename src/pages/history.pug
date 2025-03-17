@@ -1,0 +1,32 @@
+extends ../layout/layout
+
+block title
+    - var title = 'История заказов'
+    - var page = 'page-history'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Личный кабинет', 'История заказов')
+    section.history
+        .container
+            .history__inner
+                h1 История заказов
+                .history__inner-wrapper
+                    .page-selector(data-showdown)
+                        .selected-page(data-trigger)
+                        .page-selector__options
+                            a(href="user.html").page-selector__option Личные данные
+                            a(href="orders.html").page-selector__option Текущие заказы
+                            a(href="history.html").page-selector__option.selected История заказов
+                    .history__orders
+                        .history__orders-item
+                            .history__orders-item-title Заказ № 3 от 21.05.2024 на сумму 10 000 ₽
+                            .history__orders-item-actions
+                                a(href="order-details.html").history__orders-item-actions-details Подробнее о заказе
+                                a(href="javascript:void(0)").history__orders-item-actions-repeat Повторить заказ
+
+                        .history__orders-item
+                            .history__orders-item-title Заказ № 3 от 21.05.2024 на сумму 10 000 ₽
+                            .history__orders-item-actions
+                                a(href="order-details.html").history__orders-item-actions-details Подробнее о заказе
+                                a(href="javascript:void(0)").history__orders-item-actions-repeat Повторить заказ

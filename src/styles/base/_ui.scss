@@ -192,6 +192,17 @@ input[type="number"] {
   &.input--gray {
     background: $gray-01;
   }
+
+  &.error {
+    border: 1px solid $error-primary;
+  }
+}
+
+.error-message {
+  color: #F81111;
+  font-size: 14px;
+  line-height: 160%; /* 22.4px */
+  margin-top: 10px;
 }
 
 

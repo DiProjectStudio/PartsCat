@@ -1,0 +1,134 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Мой заказ № 3, создан 16.10.2023'
+    - var page = 'page-order-details'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Личный кабинет', 'Текущие заказы', 'Мой заказ № 3, создан 16.10.2023')
+    section.order-details
+        .container
+            .order-details__inner
+                h1 Мой заказ № 3, создан 16.10.2023
+                a(href="orders.html").order-details__back.order-details__back--top Вернуться в список заказов
+                .order-details__inner-wrapper
+                    .page-selector(data-showdown)
+                        .selected-page(data-trigger)
+                        .page-selector__options
+                            a(href="user.html").page-selector__option Личные данные
+                            a(href="orders.html").page-selector__option.selected Текущие заказы
+                            a(href="history.html").page-selector__option История заказов
+                    .order-details__main
+                        .order-details__main-title Заказ № 3 от 21.05.2024 на сумму 10 000 ₽
+                        .order-details__main-info.order-details__main-section
+                            .order-details__main-section-title Информация о заказе
+                            .order-details__main-info-section
+                                .order-details__main-info-section-name
+                                    p Ф.И.О.
+                                    p Иван Иванович
+                                .order-details__main-info-section-status
+                                    p Текущий статус
+                                    p Ожидается оплата
+                                .order-details__main-info-section-amount
+                                    p Сумма
+                                    p 10 000 ₽
+                                .order-details__main-info-section-actions
+                                    a(href="javascript:void(0)").btn.btn--brand Повторить заказ
+                                    a(href="javascript:void(0)").order-cancel Отменить заказ
+                            a(href="javascript:void(0)").order-details__main-info-more Подробнее
+
+                        .order-details__main-payment.order-details__main-section
+                            .order-details__main-section-title Оплата
+                            .order-details__main-payment-bill
+                                .order-details__main-payment-bill-title Счёт№ 104 от 21.05.2024, QR-code
+                                // либо статус status--payed, либо status--not-payed
+                                .order-details__main-payment-bill-status.status--not-payed
+                                    span Не оплачено
+                                    span Оплачено
+                                a(href="javascript:void(0)").btn.btn--brand Оплатить
+                            .order-details__main-payment-amount Сумма к оплате по счёту: 10 000 ₽
+                            a(href="javascript:void(0)").order-details__main-payment-change Сменить способ оплаты
+
+                        .order-details__main-shipping.order-details__main-section
+                            .order-details__main-section-title Параметры отгрузки
+                            .order-details__main-shipping-details
+                                .order-details__main-shipping-details-title Отгрузка № 104
+                                // либо статус status--shipped, либо status--not-shipped
+                                .order-details__main-shipping-details-status.status--not-shipped
+                                    span Не отгружено
+                                    span Отгружено
+                            .order-details__main-shipping-status
+                                .order-details__main-shipping-status-title Статус отгрузки
+                                // статусы: .status--in-process, .status--processed, .status--not-processed
+                                .order-details__main-shipping-status-process.status--in-process
+                                    span Ожидает обработки
+                                    span Обработан
+                                    span Не обработан
+                            .order-details__main-shipping-service Служба доставки: СДЭК, Доставка в почтамат
+                            a(href="javascript:void(0)").order-details__main-shipping-more Показать всё
+
+                        .order-details__main-content.order-details__main-section
+                            .order-details__main-section-title Содержимое заказа
+
+                            .order-details__main-content-products
+                                p Наименование
+                                .order-details__main-content-products-grid
+                                    .order-details__main-content-product
+                                        a(href="product.html").order-details__main-content-product-image
+                                            +img('product-card-image.png')
+                                        a(href="product.html").order-details__main-content-product-details
+                                            .order-details__main-content-product-details-title Фильтр воздушный SEM 518-4406
+                                            .order-details__main-content-product-details-specifications
+                                                .specification
+                                                    span Объём:
+                                                    span 5 литров
+                                        .order-details__main-content-product-payment
+                                            .order-details__main-content-product-payment-price
+                                                p Цена
+                                                p 20 000 ₽
+                                            .order-details__main-content-product-payment-discount
+                                                p Скидка
+                                                p 10 000 ₽
+                                            .order-details__main-content-product-payment-amount
+                                                p Кол-во
+                                                p 1 шт
+                                            .order-details__main-content-product-payment-sum
+                                                p Сумма
+                                                p 10 000 ₽
+
+                                    .order-details__main-content-product
+                                        a(href="product.html").order-details__main-content-product-image
+                                            +img('product-card-image.png')
+                                        a(href="product.html").order-details__main-content-product-details
+                                            .order-details__main-content-product-details-title Фильтр воздушный SEM 518-4406
+                                            .order-details__main-content-product-details-specifications
+                                                .specification
+                                                    span Объём:
+                                                    span 5 литров
+                                        .order-details__main-content-product-payment
+                                            .order-details__main-content-product-payment-price
+                                                p Цена
+                                                p 20 000 ₽
+                                            .order-details__main-content-product-payment-discount
+                                                p Скидка
+                                                p 10 000 ₽
+                                            .order-details__main-content-product-payment-amount
+                                                p Кол-во
+                                                p 1 шт
+                                            .order-details__main-content-product-payment-sum
+                                                p Сумма
+                                                p 10 000 ₽
+                            .order-details__main-content-sum
+                                p Товаров на
+                                p 20 000 ₽
+                            .order-details__main-content-delivery
+                                p Стоимость доставки
+                                p 0 ₽
+
+
+
+
+
+
+                a(href="orders.html").order-details__back.order-details__back--bottom Вернуться в список заказов
