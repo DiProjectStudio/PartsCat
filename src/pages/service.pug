@@ -239,8 +239,10 @@ block main
                 .service-feedback__title Оставьте заявку на ремонт двигателя
                 .service-feedback__form
                     form
-                        input(type="text" placeholder="Имя*").input.input--white
-                        input(type="tel" placeholder="Телефон*" data-phone-number).input.input--white
+                        .input-wrapper
+                            input(type="text" placeholder="Имя*").input.input--white
+                        .input-wrapper
+                            input(type="tel" placeholder="Телефон*" data-phone-number).input.input--white
                         button.btn.btn--black Отправить
                     .service-feedback__form-agree.
                         Нажимая на кнопку “Отправить”, вы соглашаетесь на обработку персональных данных и

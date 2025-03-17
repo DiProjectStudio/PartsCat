@@ -26,8 +26,10 @@ block main
                                     input(type="radio" name="individual")
                                     span
                                 .order__region-inputs.order-section__inputs
-                                    input(type="text" placeholder="Местоположение*" required).input.input--gray
-                                    input(type="text" placeholder="Индекс*" required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="Местоположение*" required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="Индекс*" required).input.input--gray
                             a(href="#delivery").order-section__next-button.btn.btn--brand Далее
 
                         .order__delivery.order-section#delivery
@@ -150,10 +152,14 @@ block main
                                 .order-section__title Покупатель
                             .order__buyer-form
                                 .order__buyer-form-inputs
-                                    input(type="text" placeholder="ФИО*" required).input.input--gray
-                                    input(type="text" placeholder="Email*" required).input.input--gray
-                                    input(type="text" placeholder="Телефон" data-phone-number required).input.input--gray
-                                    input(type="text" placeholder="Адрес*" required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="ФИО*" required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="Email*" required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="Телефон" data-phone-number required).input.input--gray
+                                    .input-wrapper
+                                        input(type="text" placeholder="Адрес*" required).input.input--gray
                                 textarea(placeholder="Комментарий к заказу").input.input--gray
                             a(href="#payment").order-section__prev-button.btn.btn--black Назад
 

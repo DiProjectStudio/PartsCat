@@ -5,7 +5,7 @@ import hideNavigation from '../utils/hide-navigation.js';
 export function initializeSlider() {
 
     const mainPageSlider = new Swiper(".section-hero__slider .swiper", {
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         pagination: {
             el: ".section-hero__slider .swiper-pagination",
@@ -15,7 +15,11 @@ export function initializeSlider() {
         navigation: {
             prevEl: ".section-hero__slider .button-prev",
             nextEl: ".section-hero__slider .button-next",
-        }
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
     });
 
     const productsSlider = new Swiper(".products-slider .swiper", {

@@ -5,7 +5,7 @@
 * {
   scroll-padding: 90px;
 
-  @include  breakpoint(md) {
+  @include breakpoint(md) {
     scroll-padding: 104px;
   }
 
@@ -17,6 +17,11 @@
     scroll-padding: 227px;
   }
 }
+
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}
+
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -171,6 +176,8 @@ input[type="number"] {
   line-height: 140%; /* 22.4px */
   padding: 22px 20px;
   border: none;
+  width: 100%;
+  height: 100%;
 
   &::placeholder {
     color: $gray-03;
@@ -435,6 +442,7 @@ section + section {
 .auth-tabs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   .auth-tab {
     text-align: center;
     font-weight: 600;
@@ -458,6 +466,7 @@ section + section {
 
 .input-password {
   position: relative;
+
   &__state {
     position: absolute;
     width: 24px;

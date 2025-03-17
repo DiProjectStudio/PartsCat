@@ -23,19 +23,24 @@ block main
                             form
                                 .user-main__data-field
                                     label(for="addressing") Обращение
-                                    input(id="addressing" type="text" value="Иван").input.input--gray
+                                    .input-wrapper
+                                        input(id="addressing" type="text" value="Иван").input.input--gray
                                 .user-main__data-field
                                     label(for="firstName") Имя
-                                    input(id="firstName" type="text" value="Иван").input.input--gray
+                                    .input-wrapper
+                                        input(id="firstName" type="text" value="Иван").input.input--gray
                                 .user-main__data-field
                                     label(for="lastName") Фамилия
-                                    input(id="lastName" type="text" value="Иванов").input.input--gray
+                                    .input-wrapper
+                                        input(id="lastName" type="text" value="Иванов").input.input--gray
                                 .user-main__data-field
                                     label(for="patronymic") Отчество
-                                    input(id="patronymic" type="text" value="Иванович").input.input--gray
+                                    .input-wrapper
+                                        input(id="patronymic" type="text" value="Иванович").input.input--gray
                                 .user-main__data-field
                                     label(for="login") Логин (мин. 3 символ)*
-                                    input(id="login" type="text" value="Ivan").input.input--gray
+                                    .input-wrapper
+                                        input(id="login" type="text" value="Ivan").input.input--gray
                                 .user-main__data-field
                                     label(for="password") Новый пароль (мин. 6 символов)
                                     .input-password

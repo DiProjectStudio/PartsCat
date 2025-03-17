@@ -4,8 +4,10 @@ section.section-feedback
             .section-feedback__inner-title ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК
             .section-feedback__inner-form
                 form
-                    input(type="text" placeholder="Имя*" required).input.input--white
-                    input(type="text" placeholder="Телефон*" required data-phone-number).input.input--white
+                    .input-wrapper
+                        input(type="text" placeholder="Имя*" required).input.input--white
+                    .input-wrapper
+                        input(type="text" placeholder="Телефон*" required data-phone-number).input.input--white
                     button.btn.btn--brand Отправить
                 p.
                     Нажимая на кнопку “Отправить”, вы соглашаетесь на обработку персональных данных и подтверждаете, что ознакомлены с <a href="javascript:void(0)">политикой конфиденциальности</a>

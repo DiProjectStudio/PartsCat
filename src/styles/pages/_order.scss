@@ -82,6 +82,11 @@
 .order__region {
   &-inputs {
     margin-top: 20px;
+    grid-auto-rows: 66px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__content {
