@@ -1,6 +1,6 @@
 export default class CounterComponent {
     constructor() {
-        this.counters = document.querySelectorAll('.counter');
+        this.counters = document.querySelectorAll(".counter");
 
         this.onInit();
     }
@@ -8,29 +8,38 @@ export default class CounterComponent {
     onInit() {
         if (this.counters && this.counters.length > 0) {
             this.counters.forEach((counter) => {
-                const counterMinus = counter.querySelector('.minus');
-                const counterPlus = counter.querySelector('.plus');
-                this.counterValueIncrease(counterPlus);
-                this.counterValueDecrease(counterMinus);
+                this.counterValueIncrease(counter);
+                this.counterValueDecrease(counter);
+                this.changeCounterInputOnKeyboard(counter);
             });
         }
     }
 
-    counterValueIncrease(plusBtn) {
-        const counter = plusBtn.previousElementSibling;
-
-        plusBtn.addEventListener('click', () => {
-            if (+counter.value < 10000) {
-                (+counter.value++).toString();
+    counterValueIncrease(counter) {
+        const plusBtn = counter.querySelector(".plus");
+        const input = counter.querySelector(".counter__input");
+        plusBtn.addEventListener("click", () => {
+            if (+input.value < 10000) {
+                (+input.value++).toString();
             }
         });
     }
 
-    counterValueDecrease(minusBtn){
-        const counter = minusBtn.nextElementSibling;
-        minusBtn.addEventListener('click', () => {
-            if (+counter.value > 0) {
-                (+counter.value--).toString();
+    counterValueDecrease(counter){
+        const minusBtn = counter.querySelector(".minus");
+        const input = counter.querySelector(".counter__input");
+        minusBtn.addEventListener("click", () => {
+            if (+input.value > 1) {
+                (+input.value--).toString();
+            }
+        });
+    }
+
+    changeCounterInputOnKeyboard(counter) {
+        const input = counter.querySelector(".counter__input");
+        input.addEventListener("input", () => {
+            if (input.value === "0") {
+                input.value = "1";
             }
         });
     }

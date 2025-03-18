@@ -60,6 +60,9 @@
   background: $white;
   padding: 16px;
   height: fit-content;
+  position: sticky;
+  top: 177px;
+  right: 0;
 
   &-amount {
     @include flexCenterBetween;
