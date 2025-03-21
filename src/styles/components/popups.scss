@@ -67,20 +67,12 @@
   }
 }
 
-
-.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
-  padding: 0;
+.fancybox__container {
+  .fancybox__backdrop {
+    background: $black!important;
+    opacity: 0.4!important;
+  }
 }
-
-.fancybox__backdrop {
-  opacity: 0.4;
-  background: $black;
-  will-change: unset;
-}
-
-//root: {
-//  --fancybox-bg: var(--color-black);
-//}
 
 .popup-close-btn {
   width: 40px;

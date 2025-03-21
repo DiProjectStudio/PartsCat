@@ -1,5 +1,3 @@
-import Overlay from '../utils/overlay.js';
-
 export default class HeaderComponent {
     constructor() {
 

@@ -2,9 +2,6 @@
 @use "../base/mixins" as *;
 
 .services {
-  &__inner {
-
-  }
 
   &__items {
     display: grid;

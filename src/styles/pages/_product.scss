@@ -3,9 +3,6 @@
 @use "../base/container" as *;
 
 .product {
-  &__inner {
-
-  }
 
   &__item {
     display: grid;

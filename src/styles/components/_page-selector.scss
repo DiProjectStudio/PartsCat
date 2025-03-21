@@ -25,10 +25,6 @@
   }
 
   &.showdown {
-    .page-selector__options {
-
-    }
-
     .selected-page {
       &:after {
         transform: rotate(180deg);

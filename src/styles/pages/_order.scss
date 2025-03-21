@@ -2,9 +2,6 @@
 @use "../base/mixins" as *;
 
 .order {
-  &__inner {
-
-  }
 
   &__wrapper {
     display: grid;
